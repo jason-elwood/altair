@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sindresorhus/pageres.svg?branch=master)](https://travis-ci.org/sindresorhus/pageres) [![Coverage Status](https://coveralls.io/repos/sindresorhus/pageres/badge.svg?branch=master)](https://coveralls.io/r/sindresorhus/pageres?branch=master)
 
-Another text based adventure game for your Mac Terminal written in Swift.  
+Another text based adventure game for your Mac Terminal.  Written in Swift.  
 
 
 ## Install
