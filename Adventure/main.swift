@@ -23,8 +23,6 @@ let bodyHeight                  = 20            // Body rows
 let footerHeight                = 1             // Footer rows
 
 let title: String               = "Altair"      // App title
-var currentLocation: Int        = 101           // Array index.  Locations are contained in zones
-var currentZone: Int            = 0             // Array index.  Zones contain locations
 var gold: Int                   = 100           // Player's gold
 var points: Int                 = 0             // Player's points
 let maxPlayerLevel: Int         = 100           // Max player level
@@ -66,7 +64,7 @@ print(bg.clear - "")                            // Clears background color
 let kRoll = "roll", kAttack = "attack", kPotion = "potion", kTravel = "travel",
     kQuit = "quit", kExit = "exit", kStats = "stats", kLook = "look", kHelp = "help",
     kYes = "y", kNo = "n", kCast = "cast", kTutorial = "tutorial", kTalk = "talk",
-    kEnd = "end"
+    kEnd = "end", kMap = "map"
 
 /******************************************************************************
  ***    PARSE JSON AND ASSIGN SAVED VALUES TO CURRENT SESSION
@@ -81,8 +79,8 @@ func parseGameFile(data: String) {
             if let lev = json[0]["level"] as? Int { playerLevel = lev }
             if let exp = json[0]["experience"] as? Int { playerExperience = exp }
             if let pot = json[0]["potions"] as? Int { potions = pot }
-            if let zon = json[0]["zone"] as? Int { currentZone = zon }
-            if let loc = json[0]["location"] as? Int { currentLocation = loc }
+            if let zon = json[0]["zone"] as? Int { map.setZone(zon) }
+            if let loc = json[0]["location"] as? Int { map.setLocation(loc) }
             playerMaxHitPoints = playerLevel * 2 * 10
             newGame = false
         } catch let error as NSError {
@@ -133,17 +131,6 @@ func loadGame() {
     }
     system("clear")
     refreshUI()
-    
-    // Test server
-//    dataRequest.loginUser(["name":"Adventure App", "password":"IsMyPassword"]) {
-//        (result: String) in
-//        
-//        if result == "success" {
-//            print("Result: \(result)")
-//        } else {
-//            print("Result: \(result)")
-//        }
-//    }
 }
 
 /******************************************************************************
@@ -151,7 +138,7 @@ func loadGame() {
  ******************************************************************************/
 func saveGame() {
     
-    let gameState: NSString = NSString(string: "[{\"playername\":\"\(playerName)\",\"HP\":\(playerHitPoints), \"level\":\(playerLevel), \"experience\":\(playerExperience), \"potions\":\(potions), \"zone\":\(currentZone), \"location\":\(currentLocation)}]")
+    let gameState: NSString = NSString(string: "[{\"playername\":\"\(playerName)\",\"HP\":\(playerHitPoints), \"level\":\(playerLevel), \"experience\":\(playerExperience), \"potions\":\(potions), \"zone\":\(map.currentZoneId!), \"location\":\(map.currentLocationId!)}]")
     let destinationPath = "gmsvadv1.json"
     let filemgr = NSFileManager.defaultManager()
     if filemgr.fileExistsAtPath(destinationPath) {
@@ -224,8 +211,6 @@ func initNewSession() {
  ***    TRY TO LOAD A SAVED GAME OR ASK PLAYER TO CREATE A CHARACTER
  ******************************************************************************/
 func initNewGame() {
-    currentZone = 0
-    currentLocation = 101
     loadGame()
     
     if newGame {
@@ -276,8 +261,6 @@ func travel(command: String) {
     footerRow.append("\(command)")
     let (cantraveltup, zoneTup, locationtup) = map.travelToLocation(command)
     if cantraveltup {
-        currentZone = zoneTup
-        currentLocation = locationtup
         bodyRows.append("You traveled to \(map.zones[zoneTup].getName())")
         bodyRows.append("You are at the foot of \(map.getLocation(locationtup).getName()).")
     } else {
@@ -372,12 +355,11 @@ func leveledUp() {
 }
 
 func talk(command: String) {
-    let loc: MapProtocol = map.getLocation(currentLocation)
-    let (status, message) = loc.canTalk(command)
-    if status {
-        bodyRows.append(message)
+    let loc: LocationProtocol = map.getLocation(map.currentLocation!.getZoneId())
+    if loc.getCanTalk(command) {
+        // Maybe do something here.
     } else {
-        footerRow.append("Response to talk request: status: \(status), message: \(message)")
+        bodyRows.append("There is no one here to talk to.")
     }
     system("clear")
     refreshUI()

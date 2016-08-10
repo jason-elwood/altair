@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F15FEA51D4BFD290021E49D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FEA41D4BFD290021E49D /* Protocols.swift */; };
-		2F15FEA81D4C05B50021E49D /* Tryton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FEA71D4C05B50021E49D /* Tryton.swift */; };
-		2F15FEAA1D4C0A6F0021E49D /* MoltenFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FEA91D4C0A6F0021E49D /* MoltenFields.swift */; };
-		2F15FEAC1D4C0B0C0021E49D /* Valerion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15FEAB1D4C0B0C0021E49D /* Valerion.swift */; };
 		2F1BE9B91D483787000C6C40 /* AppleScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9B81D483787000C6C40 /* AppleScripts.swift */; };
 		2F1BE9BB1D483D88000C6C40 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9BA1D483D88000C6C40 /* Box.swift */; };
 		2F1BE9BF1D49105F000C6C40 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */; };
@@ -24,8 +20,9 @@
 		2F1BE9D11D49591C000C6C40 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9D01D49591C000C6C40 /* Tutorial.swift */; };
 		2F35F46D1D480E56005C97EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35F46C1D480E56005C97EE /* Colors.swift */; };
 		2F709ECE1D46E9190075BB45 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F709ECD1D46E9190075BB45 /* main.swift */; };
+		2F8ED2231D55584500498B09 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2221D55584500498B09 /* Location.swift */; };
+		2F8ED2251D555AE700498B09 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2241D555AE700498B09 /* NPC.swift */; };
 		2FF1AA8C1D4ABED10054707B /* LargeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1AA8B1D4ABED10054707B /* LargeText.swift */; };
-		2FF1AA8F1D4AD4260054707B /* StoicTavern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1AA8E1D4AD4260054707B /* StoicTavern.swift */; };
 		2FF1AA911D4B2F4F0054707B /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1AA901D4B2F4F0054707B /* Help.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +39,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F15FEA41D4BFD290021E49D /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		2F15FEA71D4C05B50021E49D /* Tryton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tryton.swift; sourceTree = "<group>"; };
-		2F15FEA91D4C0A6F0021E49D /* MoltenFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoltenFields.swift; sourceTree = "<group>"; };
-		2F15FEAB1D4C0B0C0021E49D /* Valerion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Valerion.swift; sourceTree = "<group>"; };
 		2F1BE9B81D483787000C6C40 /* AppleScripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScripts.swift; sourceTree = "<group>"; };
 		2F1BE9BA1D483D88000C6C40 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -60,8 +53,9 @@
 		2F35F46C1D480E56005C97EE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2F709ECA1D46E9190075BB45 /* Altair */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Altair; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F709ECD1D46E9190075BB45 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2F8ED2221D55584500498B09 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		2F8ED2241D555AE700498B09 /* NPC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
 		2FF1AA8B1D4ABED10054707B /* LargeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeText.swift; sourceTree = "<group>"; };
-		2FF1AA8E1D4AD4260054707B /* StoicTavern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoicTavern.swift; sourceTree = "<group>"; };
 		2FF1AA901D4B2F4F0054707B /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,15 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F15FEA61D4C05A40021E49D /* Zones */ = {
-			isa = PBXGroup;
-			children = (
-				2F15FEA71D4C05B50021E49D /* Tryton.swift */,
-				2F15FEAB1D4C0B0C0021E49D /* Valerion.swift */,
-			);
-			name = Zones;
-			sourceTree = "<group>";
-		};
 		2F1BE9C21D4927BE000C6C40 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +94,8 @@
 				2F1BE9D01D49591C000C6C40 /* Tutorial.swift */,
 				2FF1AA8B1D4ABED10054707B /* LargeText.swift */,
 				2FF1AA901D4B2F4F0054707B /* Help.swift */,
-				2F15FEA41D4BFD290021E49D /* Protocols.swift */,
+				2F8ED2221D55584500498B09 /* Location.swift */,
+				2F8ED2241D555AE700498B09 /* NPC.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -137,20 +123,9 @@
 				2F709ECD1D46E9190075BB45 /* main.swift */,
 				2F1BE9C21D4927BE000C6C40 /* UI */,
 				2F1BE9C91D4930D5000C6C40 /* Classes */,
-				2FF1AA8D1D4AD40C0054707B /* Locations */,
-				2F15FEA61D4C05A40021E49D /* Zones */,
 			);
 			name = Altair;
 			path = Adventure;
-			sourceTree = "<group>";
-		};
-		2FF1AA8D1D4AD40C0054707B /* Locations */ = {
-			isa = PBXGroup;
-			children = (
-				2FF1AA8E1D4AD4260054707B /* StoicTavern.swift */,
-				2F15FEA91D4C0A6F0021E49D /* MoltenFields.swift */,
-			);
-			name = Locations;
 			sourceTree = "<group>";
 		};
 		95AEF44DCC07E65A667D1DA7 /* Frameworks */ = {
@@ -219,23 +194,20 @@
 			files = (
 				2F1BE9C81D4927DA000C6C40 /* Footer.swift in Sources */,
 				2F1BE9BF1D49105F000C6C40 /* DataRequest.swift in Sources */,
-				2F15FEAA1D4C0A6F0021E49D /* MoltenFields.swift in Sources */,
 				2F709ECE1D46E9190075BB45 /* main.swift in Sources */,
 				2F1BE9BB1D483D88000C6C40 /* Box.swift in Sources */,
-				2F15FEAC1D4C0B0C0021E49D /* Valerion.swift in Sources */,
 				2F1BE9CB1D494E42000C6C40 /* Monsters.swift in Sources */,
 				2F1BE9C61D4927D0000C6C40 /* Body.swift in Sources */,
+				2F8ED2251D555AE700498B09 /* NPC.swift in Sources */,
 				2F1BE9D11D49591C000C6C40 /* Tutorial.swift in Sources */,
-				2F15FEA81D4C05B50021E49D /* Tryton.swift in Sources */,
 				2F1BE9C41D4927C8000C6C40 /* Header.swift in Sources */,
 				2F1BE9CD1D494E4C000C6C40 /* Map.swift in Sources */,
-				2FF1AA8F1D4AD4260054707B /* StoicTavern.swift in Sources */,
+				2F8ED2231D55584500498B09 /* Location.swift in Sources */,
 				2F1BE9C11D4910AD000C6C40 /* GameState.swift in Sources */,
 				2FF1AA8C1D4ABED10054707B /* LargeText.swift in Sources */,
 				2F1BE9CF1D494E5F000C6C40 /* Weapons.swift in Sources */,
 				2F1BE9B91D483787000C6C40 /* AppleScripts.swift in Sources */,
 				2FF1AA911D4B2F4F0054707B /* Help.swift in Sources */,
-				2F15FEA51D4BFD290021E49D /* Protocols.swift in Sources */,
 				2F35F46D1D480E56005C97EE /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

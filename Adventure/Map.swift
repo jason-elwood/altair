@@ -10,67 +10,118 @@ import Foundation
 
 class Map: NSObject {
 
-    //var stoicTavern: MapProtocol = StoicTavern()
-    //var moltenFields: MapProtocol = MoltenFields()
+    var tryton: Location        = Location()
+    var valerion: Location      = Location()
+    var stoicTavern: Location   = Location()
+    var moltenFields: Location  = Location()
 
-    var tryton: MapProtocol = Tryton()
-    var valerion: MapProtocol = Valerion()
-
-    var zones: [MapProtocol] = []
-    var locations: [[MapProtocol]] = []
+    var zones: [LocationProtocol]       = []
+    var locations: [LocationProtocol] = []
+    
+    var currentZone:     LocationProtocol?
+    var currentLocation: LocationProtocol?
+    
+    var currentZoneId: Int?
+    var currentLocationId: Int?
 
     var worldMap = [
         [-1, -1, -1, -1, -1, -1],
-        [-1, 0, 1, 2, -1, -1],
-        [-1, 3, 4, 5, -1, -1],
-        [-1, 6, 7, 8, 9, -1],
+        [-1,  0,  1,  2, -1, -1],
+        [-1,  3,  4,  5, -1, -1],
+        [-1,  6,  7,  8,  9, -1],
         [-1, -1, -1, -1, -1, -1]
     ]
-    
-    override init() {
-        super.init()
-    }
 
     func initializeMap() {
-        //stoicTavern.initializeLocation(playerName)
+        tryton.initLoc("Tryton", zoneId: 0)
+        stoicTavern.initLoc("Stoic Tavern", zoneId: 100)
+        stoicTavern.setNpcs([tavernKeeper, ned])
+        stoicTavern.canTalk = true
+        stoicTavern.setDescription([
+            "You are in a tavern.  There are various people scattered througout.",
+            "The tavern keeper, tavern keeper, is busy pouring a drink.",
+            "There is a man of interest named quest giver, in a chair at the far end of the tavern."
+            ])
+        
+        valerion.initLoc("Valerion", zoneId: 1)
+        moltenFields.initLoc("Molten Fields", zoneId: 101)
+        moltenFields.setNpcs([])
+        moltenFields.canTalk = false
+        moltenFields.setDescription([
+            "You have reached the sumit of the Molten Mountains and are looking down at a pool.",
+            "The pool is on fire and in the far distance is an active volcano.",
+            "There is a cave opening several hundred meters to the east.",
+            "Evidence that someone has recently broken camp here is evident.  Perhaps you could investigate?"
+            ])
         
         zones.append(tryton)
         zones.append(valerion)
-        locations.append(tryton.getLocations())
-        locations.append(valerion.getLocations())
+        locations.append(stoicTavern)
+        locations.append(moltenFields)
+        
+        self.currentZone = tryton
+        self.currentLocation = stoicTavern
+        self.currentZoneId = 0
+        self.currentLocationId = 100
+    }
+    
+    func setZone(zoneId: Int) {
+        self.currentZoneId = zoneId
+        
+        if zoneId == 0 {
+            currentZone = tryton
+        } else if zoneId == 1 {
+            currentZone = valerion
+        }
+    }
+    
+    func setLocation(locid: Int) {
+        self.currentLocationId = locid
+        
+        if locid == 100 {
+            currentLocation = stoicTavern
+        } else if locid == 101 {
+            currentLocation = moltenFields
+        }
     }
 
     /**
-     - parameter locationid: Takes any location id.  The method will
-     get the zone from the main program.
+     - parameter locationid: Takes any location id.  
      - returns: location - the current location.
      */
-    func getLocation(locationid: Int) -> MapProtocol {
-        for locs in 0..<locations[currentZone].count {
-            let loc: MapProtocol = locations[currentZone][locs]
+    func getLocation(locationid: Int) -> LocationProtocol {
+        for locs in 0..<locations.count {
+            let loc: LocationProtocol = locations[locs]
             if loc.getZoneId() == locationid {
                 return loc
             }
         }
-        return locations[0][0]
+        return locations[0]
     }
     
     func areaCheck() {
         
-        if currentZone == 0 {
-            zones[0].areaCheck()
-        } else if currentZone == 1 {
-            zones[1].areaCheck()
+        bodyRows.append("")
+        if self.currentLocationId == 100 {
+            bodyRows.append(locations[0].getName())
+            bodyRows.append(createHorizLine())
+            for line in stoicTavern.getDescription() {
+                bodyRows.append(line)
+            }
+        } else if self.currentLocationId == 101 {
+            bodyRows.append(locations[1].getName())
+            bodyRows.append(createHorizLine())
+            for line in moltenFields.getDescription() {
+                bodyRows.append(line)
+            }
         }
-        
+        system("clear")
+        refreshUI()
     }
 
     func travelToLocation(string: String) -> (canTravel: Bool, zone: Int, location: Int) {
         
-        //let zone: MapProtocol = zones[currentZone]
         var zoneId: Int = -1
-        //let locs = zone.getLocations()
-        //let locs = zone.getConnectors()
         
         if string.rangeOfString("valerion") != nil {
             zoneId = valerion.getZoneId()
@@ -78,11 +129,13 @@ class Map: NSObject {
             for x in 0..<worldMap.count {
                 for y in 0..<worldMap[x].count {
                     if worldMap[x][y] == zoneId {
-                        if worldMap[x - 1][y] == currentZone ||
-                           worldMap[x + 1][y] == currentZone ||
-                           worldMap[x][y - 1] == currentZone ||
-                           worldMap[x][y + 1] == currentZone {
-                            return (true, zoneId, 111)
+                        if worldMap[x - 1][y] == self.currentZone!.getZoneId() ||
+                            worldMap[x + 1][y] == self.currentZone!.getZoneId() ||
+                            worldMap[x][y - 1] == self.currentZone!.getZoneId() ||
+                            worldMap[x][y + 1] == self.currentZone!.getZoneId() {
+                            setZone(1)
+                            setLocation(101)
+                            return (true, zoneId, 101)
                         }
                     }
                 }
@@ -93,11 +146,13 @@ class Map: NSObject {
             for x in 0..<worldMap.count {
                 for y in 0..<worldMap[x].count {
                     if worldMap[x][y] == zoneId {
-                        if worldMap[x - 1][y] == currentZone ||
-                           worldMap[x + 1][y] == currentZone ||
-                           worldMap[x][y - 1] == currentZone ||
-                           worldMap[x][y + 1] == currentZone {
-                            return (true, zoneId, 101)
+                        if worldMap[x - 1][y]  == self.currentZoneId ||
+                            worldMap[x + 1][y] == self.currentZoneId ||
+                            worldMap[x][y - 1] == self.currentZoneId ||
+                            worldMap[x][y + 1] == self.currentZoneId {
+                            setZone(0)
+                            setLocation(100)
+                            return (true, zoneId, 100)
                         }
                     }
                 }
@@ -105,12 +160,11 @@ class Map: NSObject {
         } 
         return (false, zoneId, -1)
     }
+    
+    func talkTo(recipient: String) -> Bool {
+        return currentLocation!.getCanTalk(recipient)
+    }
 }
-
-
-
-
-
 
 
 
