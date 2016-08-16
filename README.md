@@ -29,7 +29,7 @@ refresh, as would be solved by CADisplayLink with UIKit apps.
 //
 
 ## Commands:
-Commands arecase sensitive.  Command arguments are not.
+Commands are case sensitive.  Command arguments are not.
 
 #### help
 Displays onscreen help.
