@@ -96,8 +96,10 @@ class Box: NSObject {
         var diff = 0
         if string == "" {diff = 1} else {diff = 1}
         var text: String = ""
-        if boxed == true {text += boxColor + vl}
+        if boxed {text += boxColor + vl}
         let prespaces = width - string.characters.count
+        
+        if prespaces % 2 == 0 {diff = 1} else {diff = 0}
         for _ in 0..<prespaces / 2 - diff {
             text += " "
         }

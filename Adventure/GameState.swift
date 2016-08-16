@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+var inBattle: Bool = false

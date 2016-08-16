@@ -12,11 +12,11 @@ let boxed: Box = Box()
 
 func showTitle() {
     
-    bodyRows.append("      _    _ _        _")
-    bodyRows.append("     / \\  | | |_ __ _(_)_ __")
-    bodyRows.append("    / _ \\ | | __/ _` | | '__|")
-    bodyRows.append("   / ___ \\| | || (_| | | |")
-    bodyRows.append("  /_/   \\_\\_|\\__\\__,_|_|_|")
+    //bodyRows.append("      _    _ _        _")
+    //bodyRows.append("     / \\  | | |_ __ _(_)_ __")
+    //bodyRows.append("    / _ \\ | | __/ _` | | '__|")
+    //bodyRows.append("   / ___ \\| | || (_| | | |")
+    //bodyRows.append("  /_/   \\_\\_|\\__\\__,_|_|_|")
     //bodyRows.append("")
     bodyRows.append(createHorizLine())
     bodyRows.append("")

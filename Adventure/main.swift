@@ -14,7 +14,6 @@ typealias bg                    = ANSIColorsBackground  // Text backround
 let applescripts: AppleScripts  = AppleScripts()        // Terminal control
 let dataRequest: DataRequest    = DataRequest()         // HTTP requests
 let box: Box                    = Box()                 // Drawing 'engine'
-let map: Map                    = Map()
 
 let appWidth                    = 158           // Terminal collumns
 let appHeight                   = 40            // Terminal rows
@@ -54,6 +53,7 @@ var footerRow: [String]         = []            // Array containing line of text
 
 var playerAttackDmg: Int        = 0             // The player's current total attack damage
 var dragonAttackDmg: Int        = 0             // An ememy's current total attack damage
+var showTheSplash: Bool            = true          // Show the splash or not
 
 applescripts.initializeScripts()                // Initializes shell settings
 print(bg.clear - "")                            // Clears background color
@@ -79,8 +79,8 @@ func parseGameFile(data: String) {
             if let lev = json[0]["level"] as? Int { playerLevel = lev }
             if let exp = json[0]["experience"] as? Int { playerExperience = exp }
             if let pot = json[0]["potions"] as? Int { potions = pot }
-            if let zon = json[0]["zone"] as? Int { map.setZone(zon) }
-            if let loc = json[0]["location"] as? Int { map.setLocation(loc) }
+            if let zon = json[0]["zone"] as? Int { setZone(zon) }
+            if let loc = json[0]["location"] as? Int { setLocation(loc) }
             playerMaxHitPoints = playerLevel * 2 * 10
             newGame = false
         } catch let error as NSError {
@@ -138,7 +138,7 @@ func loadGame() {
  ******************************************************************************/
 func saveGame() {
     
-    let gameState: NSString = NSString(string: "[{\"playername\":\"\(playerName)\",\"HP\":\(playerHitPoints), \"level\":\(playerLevel), \"experience\":\(playerExperience), \"potions\":\(potions), \"zone\":\(map.currentZoneId!), \"location\":\(map.currentLocationId!)}]")
+    let gameState: NSString = NSString(string: "[{\"playername\":\"\(playerName)\",\"HP\":\(playerHitPoints), \"level\":\(playerLevel), \"experience\":\(playerExperience), \"potions\":\(potions), \"zone\":\(currentZoneId!), \"location\":\(currentLocationId!)}]")
     let destinationPath = "gmsvadv1.json"
     let filemgr = NSFileManager.defaultManager()
     if filemgr.fileExistsAtPath(destinationPath) {
@@ -200,7 +200,7 @@ func showHelp() {
 func initNewSession() {
     showTitle()
     // 'areaCheck()' displays information about the new location
-    map.areaCheck()
+    areaCheck()
     footerRow.append("Save game found.  Data loaded.")
     system("clear")
     refreshUI()
@@ -259,10 +259,10 @@ func takePotion() {
  ******************************************************************************/
 func travel(command: String) {
     footerRow.append("\(command)")
-    let (cantraveltup, zoneTup, locationtup) = map.travelToLocation(command)
+    let (cantraveltup, zoneTup, locationtup) = travelToLocation(command)
     if cantraveltup {
-        bodyRows.append("You traveled to \(map.zones[zoneTup].getName())")
-        bodyRows.append("You are at the foot of \(map.getLocation(locationtup).getName()).")
+        bodyRows.append("You traveled to \(zones[zoneTup].getName())")
+        bodyRows.append("You are at the foot of \(getLocation(locationtup).getName()).")
     } else {
         bodyRows.append("Sorry, you're not able to travel to that destination from here.")
     }
@@ -344,7 +344,7 @@ func leveledUp() {
         if playerLevel == maxPlayerLevel {
             bodyRows.append("You are now level \(playerLevel)! You reached max level!")
         } else {
-            bodyRows.append("You are now level \(playerLevel)!")
+            showLevelUp(playerLevel)
         }
         bodyRows.append("You earned a potion.")
         saveGame()
@@ -355,7 +355,7 @@ func leveledUp() {
 }
 
 func talk(command: String) {
-    let loc: LocationProtocol = map.getLocation(map.currentLocation!.getZoneId())
+    let loc: LocationProtocol = getLocation(currentLocation!.getZoneId())
     if loc.getCanTalk(command) {
         // Maybe do something here.
     } else {
@@ -365,6 +365,23 @@ func talk(command: String) {
     refreshUI()
 }
 
+func splash() {
+    showSplash()
+
+    print(fg.red + "\nCommand?")
+    
+    var command: String! = String(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding)
+    command = command?.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+    
+    if command.lowercaseString == "start" {
+        showTheSplash = false
+        gameLoop()
+    } else {
+        splash()
+    }
+    
+}
+
 /******************************************************************************
  ***    THE MAIN GAME LOOP
  ******************************************************************************/
@@ -372,7 +389,10 @@ func gameLoop() {
     
     // Preliminary status checks
     if newGame {
-        map.initializeMap()
+        if showTheSplash {
+            splash()
+        }
+        initializeMap()
         initNewGame()
     }
     
@@ -395,7 +415,7 @@ func gameLoop() {
     if command == kStats {
         
     } else if command == kLook {
-        map.areaCheck()
+        areaCheck()
         gameLoop()
     } else if command == kHelp {
         startHelp()

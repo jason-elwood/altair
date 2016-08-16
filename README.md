@@ -2,8 +2,15 @@
 
 [![Build Status](https://travis-ci.org/sindresorhus/pageres.svg?branch=master)](https://travis-ci.org/sindresorhus/pageres) [![Coverage Status](https://coveralls.io/repos/sindresorhus/pageres/badge.svg?branch=master)](https://coveralls.io/r/sindresorhus/pageres?branch=master)
 
-Another text based adventure game for your Mac Terminal.  Written in Swift.  
+A text based adventure game for your Mac Terminal.  Written in Swift.  
 
+I discovered ncurses after I began work on this project, which is fine because
+this application is meant to be a Swift academic exercise.
+
+The initial commit included a more "classy", Object Oriented approach, including classes
+for each of the various objects in the game.  This approach was abandoned early on in
+    favor of structures and enumerations.  Admitedly, this was done as an
+    academic exercise, but I think it works well.
 
 ## Install
 
@@ -15,90 +22,68 @@ Double click the Altair file.
 ## Usage
 
 ```js
-const Pageres = require('pageres');
-
-const pageres = new Pageres({delay: 2})
-	.src('yeoman.io', ['480x320', '1024x768', 'iphone 5s'], {crop: true})
-	.src('todomvc.com', ['1280x1024', '1920x1080'])
-	.src('data:text/html;base64,PGgxPkZPTzwvaDE+', ['1024x768'])
-	.dest(__dirname)
-	.run()
-	.then(() => console.log('done'));
 ```
 
-## API
+## Known issues
 
-### Pageres([options])
+There is a tendency for the terminal to flicker when a command
+is entered.  I believe this is because the app is not syncd with the screen
+refresh, as would be solved by CADisplayLink with UIKit apps.  
 
-#### options
+## Character creation:
 
-##### delay
+//
 
-Type: `number` *(seconds)*  
-Default: `0`
+## Commands:
+Commands are not case sensitive.
 
-Delay capturing the screenshot.
+#### help
+Displays onscreen help.
 
-Useful when the site does things after load that you want to capture.
+#### tutorial
+Replays the new-game turorial.
 
-##### timeout
+#### look
+Describes the player's current location.  Gives clues regarding who the player
+can talk to, possible quests, places to travel, etc.
 
-Type: `number` *(seconds)*  
-Default: `60`
+#### talk
+Initiates a conversation with available NPC.
+example:
+```js
+talk Ned
+```
+#### travel
+Travel to an adjacent location on the map, provided the user is within the level
+range.
+example:
+```js
+travel valerion
+```
 
-Number of seconds after which PhantomJS aborts the request.
+#### attack
+When engaged in combat, attack will attack the targeted creature.
+example:
+```js
+attack bat
+```
 
-##### crop
+#### potion
+Player consumes potion, if available, restoring some health.
 
-Type: `boolean`  
-Default: `false`
+## Configure:
 
-Crop to the set height.
+Type config to see a list of configuration options.
 
-##### css
-
-Type: `string`
-
-Apply custom CSS to the webpage. Specify some CSS or the path to a CSS file.
-
-##### cookies
-
-Type: `array` of `string`, `object`
-
-A string with the same format as a [browser cookie](https://en.wikipedia.org/wiki/HTTP_cookie) or an object of what [`phantomjs.addCookie`](http://phantomjs.org/api/phantom/method/add-cookie.html) accepts.
-
-###### Tip
-
-Go to the website you want a cookie for and copy-paste it from Dev Tools.
-
-##### filename
-
-Type: `string`
-
-Define a customized filename using [Lo-Dash templates](https://lodash.com/docs#template).  
-For example `<%= date %> - <%= url %>-<%= size %><%= crop %>`.
-
-Available variables:
-
-- `url`: The URL in [slugified](https://github.com/ogt/slugify-url) form, eg. `http://yeoman.io/blog/` becomes `yeoman.io!blog`
-- `size`: Specified size, eg. `1024x1000`
-- `width`: Width of the specified size, eg. `1024`
-- `height`: Height of the specified size, eg. `1000`
-- `crop`: Outputs `-cropped` when the crop option is true
-- `date`: The current date (Y-M-d), eg. 2015-05-18
-- `time`: The current time (h-m-s), eg. 21-15-11
-
-##### selector
-
-Type: `string`
-
-Capture a specific DOM element.
-
-##### hide
-
-Type: `array`
-
-Hide an array of DOM elements.
+- `width`: Sets width (in columns) of the terminal.  Values too small or too large may have undesireable
+  affects. 
+- `height`: Sets height (in rows) of the terminal.  Values too small or too large may have undesireable
+  affects. 
+- `text-color`: Color options are white, black, orange, yellow, green, blue and
+  cyan.
+- `background-color`: Color options are white, black, orange, yellow, green,
+  blue and cyan. 
+- `reset-game`: Resets current game and character. 
 
 ##### username
 

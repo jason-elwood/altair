@@ -13,8 +13,8 @@ let textColor: ANSIColorsForeground = fg.cyan
 func showHeader() {
     
     print(box.createLidWithTitle(appWidth, title: title, strColor: fg.white, boxColor: fg.lightblue))
-    print(box.leftText(appWidth, cols: 2, string: playerName, string2: String(map.currentLocation!.getName()), boxed: true, strColor: textColor, boxColor: fg.lightblue))
-    print(box.leftText(appWidth, cols: 2, string: "Level: \(playerLevel)", string2: String(map.currentZone!.getName()), boxed: true, strColor: textColor, boxColor: fg.lightblue))
+    print(box.leftText(appWidth, cols: 2, string: playerName, string2: String(currentLocation!.getName()), boxed: true, strColor: textColor, boxColor: fg.lightblue))
+    print(box.leftText(appWidth, cols: 2, string: "Level: \(playerLevel)", string2: String(currentZone!.getName()), boxed: true, strColor: textColor, boxColor: fg.lightblue))
     print(box.leftText(appWidth, cols: 1, string: "Exp: \(playerExperience)", string2: "", boxed: true, strColor: textColor, boxColor: fg.lightblue))
     print(box.leftText(appWidth, cols: 1, string: "HP: \(playerHitPoints)", string2: "", boxed: true, strColor: textColor, boxColor: fg.lightblue))
     print(box.leftText(appWidth, cols: 1, string: "Potions: \(potions)", string2: "", boxed: true, strColor: textColor, boxColor: fg.lightblue))

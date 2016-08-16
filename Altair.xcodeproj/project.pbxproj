@@ -11,14 +11,15 @@
 		2F1BE9BB1D483D88000C6C40 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9BA1D483D88000C6C40 /* Box.swift */; };
 		2F1BE9BF1D49105F000C6C40 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */; };
 		2F1BE9C11D4910AD000C6C40 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C01D4910AD000C6C40 /* GameState.swift */; };
-		2F1BE9C41D4927C8000C6C40 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C31D4927C8000C6C40 /* Header.swift */; };
-		2F1BE9C61D4927D0000C6C40 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C51D4927D0000C6C40 /* Body.swift */; };
-		2F1BE9C81D4927DA000C6C40 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C71D4927DA000C6C40 /* Footer.swift */; };
+		2F1BE9C41D4927C8000C6C40 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C31D4927C8000C6C40 /* UI.swift */; };
 		2F1BE9CB1D494E42000C6C40 /* Monsters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9CA1D494E42000C6C40 /* Monsters.swift */; };
 		2F1BE9CD1D494E4C000C6C40 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9CC1D494E4C000C6C40 /* Map.swift */; };
 		2F1BE9CF1D494E5F000C6C40 /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9CE1D494E5F000C6C40 /* Weapons.swift */; };
 		2F1BE9D11D49591C000C6C40 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9D01D49591C000C6C40 /* Tutorial.swift */; };
 		2F35F46D1D480E56005C97EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35F46C1D480E56005C97EE /* Colors.swift */; };
+		2F4E1AE41D5ACE76007EDB13 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E1AE31D5ACE76007EDB13 /* SplashScreen.swift */; };
+		2F4E1AE61D5B049A007EDB13 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E1AE51D5B049A007EDB13 /* Quests.swift */; };
+		2F4E1AE81D5B0BC7007EDB13 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E1AE71D5B0BC7007EDB13 /* Levels.swift */; };
 		2F709ECE1D46E9190075BB45 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F709ECD1D46E9190075BB45 /* main.swift */; };
 		2F8ED2231D55584500498B09 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2221D55584500498B09 /* Location.swift */; };
 		2F8ED2251D555AE700498B09 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2241D555AE700498B09 /* NPC.swift */; };
@@ -43,14 +44,15 @@
 		2F1BE9BA1D483D88000C6C40 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		2F1BE9C01D4910AD000C6C40 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		2F1BE9C31D4927C8000C6C40 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		2F1BE9C51D4927D0000C6C40 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
-		2F1BE9C71D4927DA000C6C40 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		2F1BE9C31D4927C8000C6C40 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		2F1BE9CA1D494E42000C6C40 /* Monsters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monsters.swift; sourceTree = "<group>"; };
 		2F1BE9CC1D494E4C000C6C40 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		2F1BE9CE1D494E5F000C6C40 /* Weapons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
 		2F1BE9D01D49591C000C6C40 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		2F35F46C1D480E56005C97EE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2F4E1AE31D5ACE76007EDB13 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		2F4E1AE51D5B049A007EDB13 /* Quests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
+		2F4E1AE71D5B0BC7007EDB13 /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		2F709ECA1D46E9190075BB45 /* Altair */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Altair; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F709ECD1D46E9190075BB45 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2F8ED2221D55584500498B09 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -73,9 +75,7 @@
 		2F1BE9C21D4927BE000C6C40 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2F1BE9C31D4927C8000C6C40 /* Header.swift */,
-				2F1BE9C51D4927D0000C6C40 /* Body.swift */,
-				2F1BE9C71D4927DA000C6C40 /* Footer.swift */,
+				2F1BE9C31D4927C8000C6C40 /* UI.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -83,6 +83,7 @@
 		2F1BE9C91D4930D5000C6C40 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E1AE31D5ACE76007EDB13 /* SplashScreen.swift */,
 				2F1BE9BA1D483D88000C6C40 /* Box.swift */,
 				2F35F46C1D480E56005C97EE /* Colors.swift */,
 				2F1BE9B81D483787000C6C40 /* AppleScripts.swift */,
@@ -96,6 +97,8 @@
 				2FF1AA901D4B2F4F0054707B /* Help.swift */,
 				2F8ED2221D55584500498B09 /* Location.swift */,
 				2F8ED2241D555AE700498B09 /* NPC.swift */,
+				2F4E1AE51D5B049A007EDB13 /* Quests.swift */,
+				2F4E1AE71D5B0BC7007EDB13 /* Levels.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -192,20 +195,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F1BE9C81D4927DA000C6C40 /* Footer.swift in Sources */,
 				2F1BE9BF1D49105F000C6C40 /* DataRequest.swift in Sources */,
 				2F709ECE1D46E9190075BB45 /* main.swift in Sources */,
 				2F1BE9BB1D483D88000C6C40 /* Box.swift in Sources */,
 				2F1BE9CB1D494E42000C6C40 /* Monsters.swift in Sources */,
-				2F1BE9C61D4927D0000C6C40 /* Body.swift in Sources */,
 				2F8ED2251D555AE700498B09 /* NPC.swift in Sources */,
 				2F1BE9D11D49591C000C6C40 /* Tutorial.swift in Sources */,
-				2F1BE9C41D4927C8000C6C40 /* Header.swift in Sources */,
+				2F1BE9C41D4927C8000C6C40 /* UI.swift in Sources */,
 				2F1BE9CD1D494E4C000C6C40 /* Map.swift in Sources */,
+				2F4E1AE81D5B0BC7007EDB13 /* Levels.swift in Sources */,
 				2F8ED2231D55584500498B09 /* Location.swift in Sources */,
+				2F4E1AE61D5B049A007EDB13 /* Quests.swift in Sources */,
 				2F1BE9C11D4910AD000C6C40 /* GameState.swift in Sources */,
 				2FF1AA8C1D4ABED10054707B /* LargeText.swift in Sources */,
 				2F1BE9CF1D494E5F000C6C40 /* Weapons.swift in Sources */,
+				2F4E1AE41D5ACE76007EDB13 /* SplashScreen.swift in Sources */,
 				2F1BE9B91D483787000C6C40 /* AppleScripts.swift in Sources */,
 				2FF1AA911D4B2F4F0054707B /* Help.swift in Sources */,
 				2F35F46D1D480E56005C97EE /* Colors.swift in Sources */,
@@ -300,22 +304,29 @@
 		2F709ED21D46E9190075BB45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2F709ED31D46E9190075BB45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
