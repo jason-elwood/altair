@@ -4,9 +4,6 @@
 
 A text based adventure game for your Mac Terminal.  Written in Swift.  
 
-I discovered ncurses after I began work on this project, which is fine because
-this application is meant to be a Swift academic exercise.
-
 
 ## Install
 
