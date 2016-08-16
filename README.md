@@ -18,11 +18,11 @@ Altair is bundled with the <a
 href="https://github.com/droppedpixel/altairwrapper">altairwrapper app</a>. 
 Drag Altair Wrapper App to Applications folder and launch it the same way
 you would any other OS X application.
-Double click the Altair file.
 
 ## Usage
 
 ```js
+
 ```
 
 ## Known issues
