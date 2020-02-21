@@ -32,6 +32,6 @@ func startTutorial() {
     bodyRows.append("Good luck to you.")
     bodyRows.append("Good luck to you.")
 
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }

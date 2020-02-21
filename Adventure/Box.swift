@@ -33,15 +33,15 @@ class Box: NSObject {
     func createLidWithTitle(width: Int, title: String, strColor: ANSIColorsForeground, boxColor: ANSIColorsForeground) -> String {
         var text: String = ""
         text += boxColor + ulc
-        let prespaces = width - title.characters.count
+        let prespaces = width - title.count
         for _ in 0..<prespaces / 2 - 2 {
             text += hl
         }
         text += " "
         text += strColor + title
-        let postspaces = width - title.characters.count
+        let postspaces = width - title.count
         var diff = 0
-        if title.characters.count % 2 != 0 {diff = 1}
+        if title.count % 2 != 0 {diff = 1}
         text += " "
         for _ in 0..<postspaces / 2 - 2 - diff {
             text +=  boxColor + hl
@@ -68,7 +68,7 @@ class Box: NSObject {
         text += boxColor + vl
         var characters = 0
         for link in links {
-            characters += link.characters.count
+            characters += link.count
         }
         let spaces = (width - characters) - ((links.count - 1) * spacer)
         
@@ -97,15 +97,15 @@ class Box: NSObject {
         if string == "" {diff = 1} else {diff = 1}
         var text: String = ""
         if boxed {text += boxColor + vl}
-        let prespaces = width - string.characters.count
+        let prespaces = width - string.count
         
         if prespaces % 2 == 0 {diff = 1} else {diff = 0}
         for _ in 0..<prespaces / 2 - diff {
             text += " "
         }
         text += strColor + string
-        let postspaces = width - string.characters.count
-        if string.characters.count % 2 != 0 {diff = 1}
+        let postspaces = width - string.count
+        if string.count % 2 != 0 {diff = 1}
         for _ in 0..<postspaces / 2 - diff {
             text += " "
         }
@@ -123,16 +123,16 @@ class Box: NSObject {
         text += strColor + " \(string)"
         if cols > 1 {
             postspaces = 1
-            midspaces = width - string.characters.count - string2.characters.count - 1
-            if string.characters.count % 2 != 0 {diff = 1} else {diff = 1}
+            midspaces = width - string.count - string2.count - 1
+            if string.count % 2 != 0 {diff = 1} else {diff = 1}
             for _ in 0..<midspaces - diff - 2 {
                 text += " "
             }
             text += strColor + string2
             text += " "
         } else {
-            postspaces = width - string.characters.count
-            if string.characters.count % 2 != 0 {diff = 1} else {diff = 1}
+            postspaces = width - string.count
+            if string.count % 2 != 0 {diff = 1} else {diff = 1}
             for _ in 0..<postspaces - diff - 2 {
                 text += " "
             }

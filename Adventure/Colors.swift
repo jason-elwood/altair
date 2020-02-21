@@ -21,15 +21,15 @@ enum ANSIColorsBackground: String {
     
     func name() -> String {
         switch self {
-        case black: return "Black"
-        case red: return "Red"
-        case green: return "Green"
-        case yellow: return "Yellow"
-        case blue: return "Blue"
-        case magenta: return "Magenta"
-        case cyan: return "Cyan"
-        case white: return "White"
-        case clear: return "Clear"
+        case .black: return "Black"
+        case .red: return "Red"
+        case .green: return "Green"
+        case .yellow: return "Yellow"
+        case .blue: return "Blue"
+        case .magenta: return "Magenta"
+        case .cyan: return "Cyan"
+        case .white: return "White"
+        case .clear: return "Clear"
         }
     }
     
@@ -52,15 +52,15 @@ enum ANSIColorsForeground: String {
     
     func name() -> String {
         switch self {
-        case black: return "Black"
-        case red: return "Red"
-        case green: return "Green"
-        case yellow: return "Yellow"
-        case blue: return "Blue"
-        case magenta: return "Magenta"
-        case cyan: return "Cyan"
-        case white: return "White"
-        case clear: return "Clear"
+        case .black: return "Black"
+        case .red: return "Red"
+        case .green: return "Green"
+        case .yellow: return "Yellow"
+        case .blue: return "Blue"
+        case .magenta: return "Magenta"
+        case .cyan: return "Cyan"
+        case .white: return "White"
+        case .clear: return "Clear"
         case .lightblue: return "Lightblue"
         }
     }
@@ -70,11 +70,11 @@ enum ANSIColorsForeground: String {
     }
 }
 
-func + (let left: ANSIColorsForeground, let right: String) -> String {
+func + ( left: ANSIColorsForeground, right: String) -> String {
     return left.rawValue + right
 }
 
-func - (let left: ANSIColorsBackground, let right: String) -> String {
+func - ( left: ANSIColorsBackground, right: String) -> String {
     return left.rawValue + right
 }
 

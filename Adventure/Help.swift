@@ -26,6 +26,6 @@ func startHelp() {
     bodyRows.append("Other commands are <tutorial>, <quit>")
     bodyRows.append("If you need any help along the way, just type <help>.")
     
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
