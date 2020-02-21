@@ -31,21 +31,21 @@ var worldMap = [
 ]
 
 func initializeMap() {
-    tryton.initLoc("Tryton", zoneId: 0)
-    stoicTavern.initLoc("Stoic Tavern", zoneId: 100)
-    stoicTavern.setNpcs([tavernKeeper, ned])
+    tryton.initLoc(name: "Tryton", zoneId: 0)
+    stoicTavern.initLoc(name: "Stoic Tavern", zoneId: 100)
+    stoicTavern.setNpcs(npcs: [tavernKeeper, ned])
     stoicTavern.canTalk = true
-    stoicTavern.setDescription([
+    stoicTavern.setDescription(descr: [
         "You are in a tavern.  There are various people scattered througout.",
         "The tavern keeper, \(tavernKeeper.getName()), is busy pouring a drink.",
         "There is a man of interest named \(ned.getName()), in a chair at the far end of the tavern."
         ])
     
-    valerion.initLoc("Valerion", zoneId: 1)
-    moltenFields.initLoc("Molten Fields", zoneId: 101)
-    moltenFields.setNpcs([])
+    valerion.initLoc(name: "Valerion", zoneId: 1)
+    moltenFields.initLoc(name: "Molten Fields", zoneId: 101)
+    moltenFields.setNpcs(npcs: [])
     moltenFields.canTalk = false
-    moltenFields.setDescription([
+    moltenFields.setDescription(descr: [
         "You have reached the sumit of the Molten Mountains and are looking down at a pool.",
         "The pool is on fire and in the far distance is an active volcano.",
         "There is a cave opening several hundred meters to the east.",
@@ -113,7 +113,7 @@ func areaCheck() {
             bodyRows.append(line)
         }
     }
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
 
@@ -121,8 +121,8 @@ func travelToLocation(string: String) -> (canTravel: Bool, zone: Int, location: 
     
     var zoneId: Int = -1
     
-    let string = string.lowercaseString
-    if string.rangeOfString("valerion") != nil {
+    let string = string.lowercased()
+    if string.range(of: "valerion") != nil {
         zoneId = valerion.getZoneId()
         
         for x in 0..<worldMap.count {
@@ -132,14 +132,14 @@ func travelToLocation(string: String) -> (canTravel: Bool, zone: Int, location: 
                         worldMap[x + 1][y] == currentZone!.getZoneId() ||
                         worldMap[x][y - 1] == currentZone!.getZoneId() ||
                         worldMap[x][y + 1] == currentZone!.getZoneId() {
-                        setZone(1)
-                        setLocation(101)
+                        setZone(zoneId: 1)
+                        setLocation(locid: 101)
                         return (true, zoneId, 101)
                     }
                 }
             }
         }
-    } else if string.rangeOfString("tryton") != nil {
+    } else if string.range(of: "tryton") != nil {
         zoneId = tryton.getZoneId()
         
         for x in 0..<worldMap.count {
@@ -149,8 +149,8 @@ func travelToLocation(string: String) -> (canTravel: Bool, zone: Int, location: 
                         worldMap[x + 1][y] == currentZoneId ||
                         worldMap[x][y - 1] == currentZoneId ||
                         worldMap[x][y + 1] == currentZoneId {
-                        setZone(0)
-                        setLocation(100)
+                        setZone(zoneId: 0)
+                        setLocation(locid: 100)
                         return (true, zoneId, 100)
                     }
                 }
@@ -161,7 +161,7 @@ func travelToLocation(string: String) -> (canTravel: Bool, zone: Int, location: 
 }
 
 func talkTo(recipient: String) -> Bool {
-    return currentLocation!.getCanTalk(recipient)
+    return currentLocation!.getCanTalk(recipient: recipient)
 }
 
 

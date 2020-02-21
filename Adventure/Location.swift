@@ -69,7 +69,7 @@ class Location: NSObject, LocationProtocol {
     
     func getCanTalk(recipient: String) -> Bool {
         if canTalk! {
-            npcReply(recipient)
+            npcReply(recipient: recipient)
         }
         return canTalk!
     }

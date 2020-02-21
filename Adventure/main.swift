@@ -71,23 +71,23 @@ let kRoll = "roll", kAttack = "attack", kPotion = "potion", kTravel = "travel",
  ******************************************************************************/
 func parseGameFile(data: String) {
     
-    if let jsonData = data.dataUsingEncoding(NSUTF8StringEncoding) {
+    if let jsonData = data.data(using: String.Encoding.utf8) {
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [[String:AnyObject]]
+            let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [[String:AnyObject]]
             if let name = json[0]["playername"] as? String { playerName = name }
             if let hp = json[0]["HP"] as? Int { playerHitPoints = hp }
             if let lev = json[0]["level"] as? Int { playerLevel = lev }
             if let exp = json[0]["experience"] as? Int { playerExperience = exp }
             if let pot = json[0]["potions"] as? Int { potions = pot }
-            if let zon = json[0]["zone"] as? Int { setZone(zon) }
-            if let loc = json[0]["location"] as? Int { setLocation(loc) }
+            if let zon = json[0]["zone"] as? Int { setZone(zoneId: zon) }
+            if let loc = json[0]["location"] as? Int { setLocation(locid: loc) }
             playerMaxHitPoints = playerLevel * 2 * 10
             newGame = false
         } catch let error as NSError {
             print(error)
         }
     }
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
 
@@ -100,12 +100,12 @@ func createSaveFile() {
     let initGame:String = ""
     
     do {
-        try initGame.writeToFile(destinationPath, atomically: true, encoding: NSUTF8StringEncoding)
+        try initGame.write(toFile: destinationPath, atomically: true, encoding: String.Encoding.utf8)
         bodyRows.append("Save file created.")
     } catch let error as NSError {
         bodyRows.append("Error writing file: \(error)")
     }
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
 
@@ -116,12 +116,12 @@ func createSaveFile() {
 func loadGame() {
     
     let destinationPath = "gmsvadv1.json"
-    let filemgr = NSFileManager.defaultManager()
+    let filemgr = FileManager.default
     
-    if filemgr.fileExistsAtPath(destinationPath) {
+    if filemgr.fileExists(atPath: destinationPath) {
         do {
-            let readFile = try String(contentsOfFile: destinationPath, encoding: NSUTF8StringEncoding)
-            parseGameFile(readFile)
+            let readFile = try String(contentsOfFile: destinationPath, encoding: String.Encoding.utf8)
+            parseGameFile(data: readFile)
         } catch let error as NSError {
             bodyRows.append("Error reading file: \(error)")
         }
@@ -129,7 +129,7 @@ func loadGame() {
         bodyRows.append("Save file does not exist")
         createSaveFile()
     }
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
 
@@ -140,22 +140,22 @@ func saveGame() {
     
     let gameState: NSString = NSString(string: "[{\"playername\":\"\(playerName)\",\"HP\":\(playerHitPoints), \"level\":\(playerLevel), \"experience\":\(playerExperience), \"potions\":\(potions), \"zone\":\(currentZoneId!), \"location\":\(currentLocationId!)}]")
     let destinationPath = "gmsvadv1.json"
-    let filemgr = NSFileManager.defaultManager()
-    if filemgr.fileExistsAtPath(destinationPath) {
+    let filemgr = FileManager.default
+    if filemgr.fileExists(atPath: destinationPath) {
         do {
-            try gameState.writeToFile(destinationPath, atomically: true, encoding: NSUTF8StringEncoding)
+            try gameState.write(toFile: destinationPath, atomically: true, encoding: String.Encoding.utf8.rawValue)
         } catch let error as NSError {
             bodyRows.append("Error Writing file: \(error)")
         }
     } else {
         bodyRows.append("File does not exist")
         do {
-            try gameState.writeToFile(destinationPath, atomically: true, encoding: NSUTF8StringEncoding)
+            try gameState.write(toFile: destinationPath, atomically: true, encoding: String.Encoding.utf8.rawValue)
         } catch let error as NSError {
             bodyRows.append("Error writing file: \(error)")
         }
     }
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
     
 }
@@ -202,7 +202,7 @@ func initNewSession() {
     // 'areaCheck()' displays information about the new location
     areaCheck()
     footerRow.append("Save game found.  Data loaded.")
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
     newSession = false
 }
@@ -216,11 +216,11 @@ func initNewGame() {
     if newGame {
         bodyRows.append("Welcome to \(title)!")
         footerRow.append("What will your name be?")
-        system("clear")
+        print("\u{001B}[2J")
         refreshUI()
         print("Name", separator: "")
         // readLine reads user input
-        let name = readLine(stripNewline: true)
+        let name = readLine(strippingNewline: true)
         playerName = String(name!)
         bodyRows.append("Okay, \(playerName).  Good luck!")
         saveGame()
@@ -250,7 +250,7 @@ func takePotion() {
     } else {
         bodyRows.append("You are out of potions!")
     }
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
 
@@ -259,15 +259,15 @@ func takePotion() {
  ******************************************************************************/
 func travel(command: String) {
     footerRow.append("\(command)")
-    let (cantraveltup, zoneTup, locationtup) = travelToLocation(command)
+    let (cantraveltup, zoneTup, locationtup) = travelToLocation(string: command)
     if cantraveltup {
         bodyRows.append("You traveled to \(zones[zoneTup].getName())")
-        bodyRows.append("You are at the foot of \(getLocation(locationtup).getName()).")
+        bodyRows.append("You are at the foot of \(getLocation(locationid: locationtup).getName()).")
     } else {
         bodyRows.append("Sorry, you're not able to travel to that destination from here.")
     }
     saveGame()
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
 
@@ -315,7 +315,7 @@ func attack(command: String) {
     leveledUp()
     saveGame()
     
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
     
     playerAttackDmg = 0
@@ -344,24 +344,24 @@ func leveledUp() {
         if playerLevel == maxPlayerLevel {
             bodyRows.append("You are now level \(playerLevel)! You reached max level!")
         } else {
-            showLevelUp(playerLevel)
+            showLevelUp(level: playerLevel)
         }
         bodyRows.append("You earned a potion.")
         saveGame()
-        system("clear")
+        print("\u{001B}[2J")
         refreshUI()
         
     }
 }
 
 func talk(command: String) {
-    let loc: LocationProtocol = getLocation(currentLocation!.getZoneId())
-    if loc.getCanTalk(command) {
+    let loc: LocationProtocol = getLocation(locationid: currentLocation!.getZoneId())
+    if loc.getCanTalk(recipient: command) {
         // Maybe do something here.
     } else {
         bodyRows.append("There is no one here to talk to.")
     }
-    system("clear")
+    print("\u{001B}[2J")
     refreshUI()
 }
 
@@ -370,10 +370,10 @@ func splash() {
 
     print(fg.red + "\nCommand?")
     
-    var command: String! = String(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding)
-    command = command?.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+    var command: String! = String(data: FileHandle.standardInput.availableData, encoding:String.Encoding.utf8)
+    command = command?.trimmingCharacters(in: NSCharacterSet.newlines)
     
-    if command.lowercaseString == "start" {
+    if command.lowercased() == "start" {
         showTheSplash = false
         gameLoop()
     } else {
@@ -408,8 +408,8 @@ func gameLoop() {
     print(fg.red + "\nCommand?")
     
     // 'command' contains the user input string
-    var command: String! = String(data: NSFileHandle.fileHandleWithStandardInput().availableData, encoding:NSUTF8StringEncoding)
-    command = command?.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+    var command: String! = String(data: FileHandle.standardInput.availableData, encoding:String.Encoding.utf8)
+    command = command?.trimmingCharacters(in: NSCharacterSet.newlines)
     
     // process user input
     if command == kStats {
@@ -424,32 +424,32 @@ func gameLoop() {
         bodyRows.append("Good Bye")
         exit(0)
     } else if playerQuit == true && command == kNo {
-        system("clear")
+        print("\u{001B}[2J")
         refreshUI()
         playerQuit = false
     } else if command == kQuit || command == kExit {
-        system("clear")
+        print("\u{001B}[2J")
         refreshUI()
         footerRow.append("Are you sure? (y/n)")
-        system("clear")
+        print("\u{001B}[2J")
         refreshUI()
         playerQuit = true
     } else if command == kPotion {
         takePotion()
         gameLoop()
-    } else if command.rangeOfString(kTalk) != nil {
-        talk(command)
+    } else if command.range(of: kTalk) != nil {
+        talk(command: command)
         gameLoop()
-    } else if command.rangeOfString(kTravel) != nil {
-        travel(command)
+    } else if command.range(of: kTravel) != nil {
+        travel(command: command)
         gameLoop()
-    } else if kAttack.rangeOfString(command) != nil {
-        attack(command)
+    } else if kAttack.range(of: command) != nil {
+        attack(command: command)
     } else if command == kTutorial {
         startTutorial()
     } else {
-        footerRow.append("I couldn't understand \(command).  Type help for a list of commands.")
-        system("clear")
+        footerRow.append("I couldn't understand \(String(describing: command)).  Type help for a list of commands.")
+        print("\u{001B}[2J")
         refreshUI()
         gameLoop()
     }
