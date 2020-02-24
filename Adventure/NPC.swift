@@ -46,12 +46,13 @@ var ned = Npc(
 
 let npcs:[NpcProtocol] = [tavernKeeper, ned]
 
-func npcReply( recipient: String) {
+func npcReply(bodyRowsObj: Array<String>, recipient: String) {
+    var bodyRows = bodyRowsObj
     let recipient = recipient.lowercased()
     if recipient.range(of: "scheeshc") != nil {
         activeNpc = tavernKeeper
         bodyRows.append("Scheeshc: Hi there, stranger.  What's your name?")
-        bodyRows.append("Scheeshc: \(playerName), huh.  Haven't seen you around here.")
+        bodyRows.append("Scheeshc: \(recipient), huh.  Haven't seen you around here.")
         bodyRows.append("Scheeshc: If you're looking for work, the guy to talk to is Ned over there.")
         bodyRows.append("Scheeshc: He's always got work for travelors.  See ya around.")
         tavernKeeper.spokenTo = true

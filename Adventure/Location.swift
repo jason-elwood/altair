@@ -33,10 +33,12 @@ class Location: NSObject, LocationProtocol {
     var npcs:       [NpcProtocol]?
     var descr:      [String]?
     var canTalk:    Bool?
+    var bodyRows:   Array<String> = []
     
-    func initLoc(name: String, zoneId: Int) {
+    func initLoc(name: String, zoneId: Int, bodyRows: Array<String>) {
         self.name = name
         self.zoneId = zoneId
+        self.bodyRows = bodyRows
     }
     
     func setDescription(descr: [String]) {
@@ -69,7 +71,7 @@ class Location: NSObject, LocationProtocol {
     
     func getCanTalk(recipient: String) -> Bool {
         if canTalk! {
-            npcReply(recipient: recipient)
+            npcReply(bodyRowsObj: bodyRows, recipient: recipient)
         }
         return canTalk!
     }

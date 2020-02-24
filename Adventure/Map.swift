@@ -30,9 +30,9 @@ var worldMap = [
     [-1, -1, -1, -1, -1, -1]
 ]
 
-func initializeMap() {
-    tryton.initLoc(name: "Tryton", zoneId: 0)
-    stoicTavern.initLoc(name: "Stoic Tavern", zoneId: 100)
+func initializeMap(bodyRowsObj: Array<String>) {
+    tryton.initLoc(name: "Tryton", zoneId: 0, bodyRows: bodyRowsObj)
+    stoicTavern.initLoc(name: "Stoic Tavern", zoneId: 100, bodyRows: bodyRowsObj)
     stoicTavern.setNpcs(npcs: [tavernKeeper, ned])
     stoicTavern.canTalk = true
     stoicTavern.setDescription(descr: [
@@ -41,8 +41,8 @@ func initializeMap() {
         "There is a man of interest named \(ned.getName()), in a chair at the far end of the tavern."
         ])
     
-    valerion.initLoc(name: "Valerion", zoneId: 1)
-    moltenFields.initLoc(name: "Molten Fields", zoneId: 101)
+    valerion.initLoc(name: "Valerion", zoneId: 1, bodyRows: bodyRowsObj)
+    moltenFields.initLoc(name: "Molten Fields", zoneId: 101, bodyRows: bodyRowsObj)
     moltenFields.setNpcs(npcs: [])
     moltenFields.canTalk = false
     moltenFields.setDescription(descr: [
@@ -97,24 +97,23 @@ func getLocation(locationid: Int) -> LocationProtocol {
     return locations[0]
 }
 
-func areaCheck() {
-    
+func areaCheck(bodyRowsObj: Array<String>, appWidth: Int) {
+    var bodyRows = bodyRowsObj
     bodyRows.append("")
     if currentLocationId == 100 {
         bodyRows.append(locations[0].getName())
-        bodyRows.append(createHorizLine())
+        bodyRows.append(createHorizLine(appWidth: appWidth))
         for line in stoicTavern.getDescription() {
             bodyRows.append(line)
         }
     } else if currentLocationId == 101 {
         bodyRows.append(locations[1].getName())
-        bodyRows.append(createHorizLine())
+        bodyRows.append(createHorizLine(appWidth: appWidth))
         for line in moltenFields.getDescription() {
             bodyRows.append(line)
         }
     }
     print("\u{001B}[2J")
-    refreshUI()
 }
 
 func travelToLocation(string: String) -> (canTravel: Bool, zone: Int, location: Int) {

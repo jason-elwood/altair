@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct ApplicationData: Decodable {
+    let playerData: [Player]
+}
+
+struct Player: Decodable {
+    let playerID: Double
+    let playername: String
+    let hitpoints: Double
+    let outgoingMessages: [String]
+    let incomingMessages: [String]
+}

@@ -8,15 +8,15 @@
 
 import Foundation
 
-func startHelp() {
-    
+func startHelp(bodyRowsObj: inout [String], appWidth: Int) {
+    var bodyRows = bodyRowsObj
     bodyRows.append(" _   _      _")
     bodyRows.append("| | | | ___| |_ __")
     bodyRows.append("| |_| |/ _ \\ | '_ \\")
     bodyRows.append("|  _  |  __/ | |_) |")
     bodyRows.append("|_| |_|\\___|_| .__/")
     bodyRows.append("             |_|")
-    bodyRows.append(createHorizLine())
+    bodyRows.append(createHorizLine(appWidth: appWidth))
     bodyRows.append("")
     bodyRows.append("In Altair you enter text commands in the command prompt. Some commands have a modifier.")
     bodyRows.append("For example, the command to talk is <talk> plus the person you want to talk to. Example: talk Ned")
@@ -27,5 +27,4 @@ func startHelp() {
     bodyRows.append("If you need any help along the way, just type <help>.")
     
     print("\u{001B}[2J")
-    refreshUI()
 }

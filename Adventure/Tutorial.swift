@@ -8,15 +8,15 @@
 
 import Foundation
 
-func startTutorial() {
-    
+func startTutorial(bodyRowsObj: Array<String>, appWidth: Int) {
+    var bodyRows = bodyRowsObj
     bodyRows.append("")
     bodyRows.append(" _____      _             _       _")
     bodyRows.append("|_   _|   _| |_ ___  _ __(_) __ _| |")
     bodyRows.append("  | || | | | __/ _ \\| '__| |/ _` | |")
     bodyRows.append("  | || |_| | || (_) | |  | | (_| | |")
     bodyRows.append("  |_| \\__,_|\\__\\___/|_|  |_|\\__,_|_|")
-    bodyRows.append(createHorizLine())
+    bodyRows.append(createHorizLine(appWidth: appWidth))
     bodyRows.append("")
     bodyRows.append("In Altair you enter text commands in the command prompt. Some commands have a modifier.")
     bodyRows.append("For example, the command to talk is <talk> plus the person you want to talk to. Example: talk Ned")
@@ -26,12 +26,6 @@ func startTutorial() {
     bodyRows.append("Other commands are <tutorial>, <quit>")
     bodyRows.append("If you need any help along the way, just type <help>.")
     bodyRows.append("Good luck to you.")
-    bodyRows.append("Good luck to you.")
-    bodyRows.append("Good luck to you.")
-    bodyRows.append("Good luck to you.")
-    bodyRows.append("Good luck to you.")
-    bodyRows.append("Good luck to you.")
 
     print("\u{001B}[2J")
-    refreshUI()
 }

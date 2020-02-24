@@ -23,8 +23,22 @@
 		2F709ECE1D46E9190075BB45 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F709ECD1D46E9190075BB45 /* main.swift */; };
 		2F8ED2231D55584500498B09 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2221D55584500498B09 /* Location.swift */; };
 		2F8ED2251D555AE700498B09 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2241D555AE700498B09 /* NPC.swift */; };
+		2FEB69492401C0080009E2CF /* FirebaseAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69472401C0080009E2CF /* FirebaseAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB69562401C0400009E2CF /* FirebaseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB694B2401C0400009E2CF /* FirebaseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB69582401C0400009E2CF /* FirebaseCoreDiagnostics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB694C2401C0400009E2CF /* FirebaseCoreDiagnostics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB695A2401C0400009E2CF /* FirebaseDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB694D2401C0400009E2CF /* FirebaseDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB695C2401C0400009E2CF /* FirebaseStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB694E2401C0400009E2CF /* FirebaseStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB695E2401C0400009E2CF /* GoogleDataTransport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB694F2401C0400009E2CF /* GoogleDataTransport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB69602401C0400009E2CF /* GoogleDataTransportCCTSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69502401C0400009E2CF /* GoogleDataTransportCCTSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB69622401C0400009E2CF /* GoogleUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69512401C0400009E2CF /* GoogleUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB69642401C0400009E2CF /* GTMSessionFetcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69522401C0400009E2CF /* GTMSessionFetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB69662401C0410009E2CF /* leveldb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69532401C0400009E2CF /* leveldb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB69682401C0410009E2CF /* nanopb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69542401C0400009E2CF /* nanopb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FEB696D240253750009E2CF /* DataBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB696C240253750009E2CF /* DataBaseModel.swift */; };
+		2FEB696F240254720009E2CF /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB696E240254710009E2CF /* ApplicationData.swift */; };
 		2FF1AA8C1D4ABED10054707B /* LargeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1AA8B1D4ABED10054707B /* LargeText.swift */; };
 		2FF1AA911D4B2F4F0054707B /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1AA901D4B2F4F0054707B /* Help.swift */; };
+		7CB10FFCC51696459803A5C9 /* Pods_Altair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC50804599422A26817CEA9 /* Pods_Altair.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,9 +51,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		2FEB694A2401C0080009E2CF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2FEB695A2401C0400009E2CF /* FirebaseDatabase.framework in Embed Frameworks */,
+				2FEB69642401C0400009E2CF /* GTMSessionFetcher.framework in Embed Frameworks */,
+				2FEB69682401C0410009E2CF /* nanopb.framework in Embed Frameworks */,
+				2FEB69602401C0400009E2CF /* GoogleDataTransportCCTSupport.framework in Embed Frameworks */,
+				2FEB69582401C0400009E2CF /* FirebaseCoreDiagnostics.framework in Embed Frameworks */,
+				2FEB69562401C0400009E2CF /* FirebaseCore.framework in Embed Frameworks */,
+				2FEB695E2401C0400009E2CF /* GoogleDataTransport.framework in Embed Frameworks */,
+				2FEB695C2401C0400009E2CF /* FirebaseStorage.framework in Embed Frameworks */,
+				2FEB69622401C0400009E2CF /* GoogleUtilities.framework in Embed Frameworks */,
+				2FEB69492401C0080009E2CF /* FirebaseAuth.framework in Embed Frameworks */,
+				2FEB69662401C0410009E2CF /* leveldb.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F564516C389244BF0C11853 /* Pods-Altair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Altair.debug.xcconfig"; path = "Target Support Files/Pods-Altair/Pods-Altair.debug.xcconfig"; sourceTree = "<group>"; };
 		2F1BE9B81D483787000C6C40 /* AppleScripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScripts.swift; sourceTree = "<group>"; };
 		2F1BE9BA1D483D88000C6C40 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -57,8 +93,26 @@
 		2F709ECD1D46E9190075BB45 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2F8ED2221D55584500498B09 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2F8ED2241D555AE700498B09 /* NPC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
+		2FC10F882400BF0900CAB3B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2FC10F892400BFDD00CAB3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FC10F8B2400C88F00CAB3B1 /* icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icons.icns; sourceTree = "<group>"; };
+		2FEB69472401C0080009E2CF /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB694B2401C0400009E2CF /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB694C2401C0400009E2CF /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB694D2401C0400009E2CF /* FirebaseDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB694E2401C0400009E2CF /* FirebaseStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB694F2401C0400009E2CF /* GoogleDataTransport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB69502401C0400009E2CF /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB69512401C0400009E2CF /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB69522401C0400009E2CF /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB69532401C0400009E2CF /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB69542401C0400009E2CF /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEB696C240253750009E2CF /* DataBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseModel.swift; sourceTree = "<group>"; };
+		2FEB696E240254710009E2CF /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 		2FF1AA8B1D4ABED10054707B /* LargeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeText.swift; sourceTree = "<group>"; };
 		2FF1AA901D4B2F4F0054707B /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		558686641236A2ABD209AED4 /* Pods-Altair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Altair.release.xcconfig"; path = "Target Support Files/Pods-Altair/Pods-Altair.release.xcconfig"; sourceTree = "<group>"; };
+		ECC50804599422A26817CEA9 /* Pods_Altair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Altair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB10FFCC51696459803A5C9 /* Pods_Altair.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				2F709ECC1D46E9190075BB45 /* Altair */,
+				2FC10F8A2400C7E200CAB3B1 /* Assets */,
 				2F709ECB1D46E9190075BB45 /* Products */,
 				95AEF44DCC07E65A667D1DA7 /* Frameworks */,
+				E1FDC040648841C42E51C6E8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,19 +180,61 @@
 		2F709ECC1D46E9190075BB45 /* Altair */ = {
 			isa = PBXGroup;
 			children = (
+				2FEB696B240253440009E2CF /* Model */,
+				2FC10F882400BF0900CAB3B1 /* Images.xcassets */,
 				2F709ECD1D46E9190075BB45 /* main.swift */,
 				2F1BE9C21D4927BE000C6C40 /* UI */,
 				2F1BE9C91D4930D5000C6C40 /* Classes */,
+				2FC10F892400BFDD00CAB3B1 /* Info.plist */,
 			);
 			name = Altair;
 			path = Adventure;
 			sourceTree = "<group>";
 		};
+		2FC10F8A2400C7E200CAB3B1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2FC10F8B2400C88F00CAB3B1 /* icons.icns */,
+			);
+			name = Assets;
+			path = Adventure;
+			sourceTree = "<group>";
+		};
+		2FEB696B240253440009E2CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FEB696C240253750009E2CF /* DataBaseModel.swift */,
+				2FEB696E240254710009E2CF /* ApplicationData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		95AEF44DCC07E65A667D1DA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FEB694B2401C0400009E2CF /* FirebaseCore.framework */,
+				2FEB694C2401C0400009E2CF /* FirebaseCoreDiagnostics.framework */,
+				2FEB694D2401C0400009E2CF /* FirebaseDatabase.framework */,
+				2FEB694E2401C0400009E2CF /* FirebaseStorage.framework */,
+				2FEB694F2401C0400009E2CF /* GoogleDataTransport.framework */,
+				2FEB69502401C0400009E2CF /* GoogleDataTransportCCTSupport.framework */,
+				2FEB69512401C0400009E2CF /* GoogleUtilities.framework */,
+				2FEB69522401C0400009E2CF /* GTMSessionFetcher.framework */,
+				2FEB69532401C0400009E2CF /* leveldb.framework */,
+				2FEB69542401C0400009E2CF /* nanopb.framework */,
+				2FEB69472401C0080009E2CF /* FirebaseAuth.framework */,
+				ECC50804599422A26817CEA9 /* Pods_Altair.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1FDC040648841C42E51C6E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F564516C389244BF0C11853 /* Pods-Altair.debug.xcconfig */,
+				558686641236A2ABD209AED4 /* Pods-Altair.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F709ED11D46E9190075BB45 /* Build configuration list for PBXNativeTarget "Altair" */;
 			buildPhases = (
+				0512B274BFC7FA910BAB1CE0 /* [CP] Check Pods Manifest.lock */,
 				2F709EC61D46E9180075BB45 /* Sources */,
 				2F709EC71D46E9180075BB45 /* Frameworks */,
 				2F709EC81D46E9180075BB45 /* CopyFiles */,
+				2FEB694A2401C0080009E2CF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,11 +266,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Jason Elwood";
 				TargetAttributes = {
 					2F709EC91D46E9180075BB45 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -191,6 +293,31 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0512B274BFC7FA910BAB1CE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Altair-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2F709EC61D46E9180075BB45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -205,6 +332,8 @@
 				2F1BE9C41D4927C8000C6C40 /* UI.swift in Sources */,
 				2F1BE9CD1D494E4C000C6C40 /* Map.swift in Sources */,
 				2F4E1AE81D5B0BC7007EDB13 /* Levels.swift in Sources */,
+				2FEB696D240253750009E2CF /* DataBaseModel.swift in Sources */,
+				2FEB696F240254720009E2CF /* ApplicationData.swift in Sources */,
 				2F8ED2231D55584500498B09 /* Location.swift in Sources */,
 				2F4E1AE61D5B049A007EDB13 /* Quests.swift in Sources */,
 				2F1BE9C11D4910AD000C6C40 /* GameState.swift in Sources */,
@@ -229,13 +358,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -275,13 +414,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -300,36 +449,41 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		2F709ED21D46E9190075BB45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F564516C389244BF0C11853 /* Pods-Altair.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_ASSET_PATHS = Adventure/Images.xcassets;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Adventure/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		2F709ED31D46E9190075BB45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 558686641236A2ABD209AED4 /* Pods-Altair.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_ASSET_PATHS = Adventure/Images.xcassets;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Adventure/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

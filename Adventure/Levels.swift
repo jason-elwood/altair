@@ -8,8 +8,9 @@
 
 import Foundation
 
-func showLevelUp(level: Int) {
-    bodyRows.append(createHorizLine())
+func showLevelUp(bodyRowsObj: Array<String>, level: Int, appWidth: Int) {
+    var bodyRows = bodyRowsObj
+    bodyRows.append(createHorizLine(appWidth: appWidth))
     if level == 2 {
         bodyRows.append("You've Reached")
         bodyRows.append("oooo                                  oooo         .oooo.")
@@ -20,5 +21,5 @@ func showLevelUp(level: Int) {
         bodyRows.append(" 888  888    .o    `888'    888    .o  888       .oP     .o")
         bodyRows.append("o888o `Y8bod8P'     `8'     `Y8bod8P' o888o      8888888888")
     }
-    bodyRows.append(createHorizLine())
+    bodyRows.append(createHorizLine(appWidth: appWidth))
 }

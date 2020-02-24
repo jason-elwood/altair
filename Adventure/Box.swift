@@ -142,7 +142,7 @@ class Box: NSObject {
         return text
     }
     
-    func createHorzLine(strColor: ANSIColorsForeground) -> String {
+    func createHorzLine(strColor: ANSIColorsForeground, appWidth: Int) -> String {
         
         var line: String = ""
         for _ in 0..<appWidth - 4   {

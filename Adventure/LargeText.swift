@@ -10,19 +10,19 @@ import Foundation
 
 let boxed: Box = Box()
 
-func showTitle() {
-    
+func showTitle(bodyRowsObj: Array<String>, appWidth: Int) {
+    var bodyRows = bodyRowsObj
     //bodyRows.append("      _    _ _        _")
     //bodyRows.append("     / \\  | | |_ __ _(_)_ __")
     //bodyRows.append("    / _ \\ | | __/ _` | | '__|")
     //bodyRows.append("   / ___ \\| | || (_| | | |")
     //bodyRows.append("  /_/   \\_\\_|\\__\\__,_|_|_|")
     //bodyRows.append("")
-    bodyRows.append(createHorizLine())
+    bodyRows.append(createHorizLine(appWidth: appWidth))
     bodyRows.append("")
 }
 
-func createHorizLine() -> String {
+func createHorizLine(appWidth: Int) -> String {
     
     var word: String = ""
     for _ in 0..<appWidth - 4 {

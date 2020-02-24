@@ -8,46 +8,46 @@
 
 import Foundation
 
-let textColor: ANSIColorsForeground = fg.cyan
+let textColor: ANSIColorsForeground = .cyan
 
-func showHeader() {
+func showHeader(box: Box, appWidth: Int, title: String, playerName: String, playerLevel: Int, playerHitPoints: Int, playerExperience: Int, currentWeapon: String, potions: Int) {
     
-    print(box.createLidWithTitle(width: appWidth, title: title, strColor: fg.white, boxColor: fg.lightblue))
-    print(box.leftText(width: appWidth, cols: 2, string: playerName, string2: String(currentLocation!.getName()), boxed: true, strColor: textColor, boxColor: fg.lightblue))
-    print(box.leftText(width: appWidth, cols: 2, string: "Level: \(playerLevel)", string2: String(currentZone!.getName()), boxed: true, strColor: textColor, boxColor: fg.lightblue))
-    print(box.leftText(width: appWidth, cols: 1, string: "Exp: \(playerExperience)", string2: "", boxed: true, strColor: textColor, boxColor: fg.lightblue))
-    print(box.leftText(width: appWidth, cols: 1, string: "HP: \(playerHitPoints)", string2: "", boxed: true, strColor: textColor, boxColor: fg.lightblue))
-    print(box.leftText(width: appWidth, cols: 1, string: "Potions: \(potions)", string2: "", boxed: true, strColor: textColor, boxColor: fg.lightblue))
-    print(box.leftText(width: appWidth, cols: 1, string: "Weapon: \(currentWeapon)", string2: "", boxed: true, strColor: textColor, boxColor: fg.lightblue))
-    print(box.centeredText(width: appWidth, string: "COMMANDS", boxed: true, strColor: fg.white, boxColor: fg.lightblue))
-    print(box.createLinksList(width: appWidth, links: ["configure", "help", "look", "shop", "talk", "travel", "quit"], strColor: fg.white, bgColor: bg.cyan, boxColor: fg.lightblue))
+    print(box.createLidWithTitle(width: appWidth, title: title, strColor: .white, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 2, string: playerName, string2: String(currentLocation!.getName()), boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 2, string: "Level: \(playerLevel)", string2: String(currentZone!.getName()), boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 1, string: "Exp: \(playerExperience)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 1, string: "HP: \(playerHitPoints)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 1, string: "Potions: \(potions)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 1, string: "Weapon: \(currentWeapon)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.centeredText(width: appWidth, string: "COMMANDS", boxed: true, strColor: .white, boxColor: .lightblue))
+    print(box.createLinksList(width: appWidth, links: ["configure", "help", "look", "shop", "talk","loot", "travel", "quit"], strColor: .white, bgColor: .cyan, boxColor: .lightblue))
     //print(box.createLinksList(appWidth, links: ["attack", "potion", "rest", "run", "shop", "configure", "help", "quit"], strColor: fg.white, bgColor: bg.cyan, boxColor: fg.lightblue))
-    bg.clear - ""
-    print(box.createBottom(width: appWidth, color: fg.lightblue))
+    //.clear - ""
+    print(box.createBottom(width: appWidth, color: .lightblue))
     
 }
 
-func showBody() {
+func showBody(box: Box, bodyRows: Array<String>, bodyHeight: Int, appWidth: Int, footerRow: Array<String>) {
     
     let fillerRows = bodyHeight - bodyRows.count
     for _ in 0..<fillerRows {
-        print(box.centeredText(width: appWidth, string: "", boxed: true, strColor: fg.white, boxColor: fg.lightblue))
+        print(box.centeredText(width: appWidth, string: "", boxed: true, strColor: .white, boxColor: .lightblue))
     }
     for row in 0..<bodyRows.count {
-        print(box.leftText(width: appWidth, cols: 1, string: bodyRows[row], string2: "", boxed: true, strColor: fg.white, boxColor: fg.lightblue))
+        print(box.leftText(width: appWidth, cols: 1, string: bodyRows[row], string2: "", boxed: true, strColor: .white, boxColor: .lightblue))
     }
-    print(box.createBottom(width: appWidth, color: fg.lightblue))
+    print(box.createBottom(width: appWidth, color: .lightblue))
     
 }
 
-func showFooter() {
+func showFooter(box: Box, footerRow: Array<String>, appWidth: Int) {
     
     if footerRow.count > 0 {
-        print(box.leftText(width: appWidth, cols: 1, string: footerRow[0], string2: "", boxed: true, strColor: fg.green, boxColor: fg.lightblue))
+        print(box.leftText(width: appWidth, cols: 1, string: footerRow[0], string2: "", boxed: true, strColor: .green, boxColor: .lightblue))
     } else {
-        print(box.centeredText(width: appWidth, string: "", boxed: true, strColor: fg.white, boxColor: fg.lightblue))
+        print(box.centeredText(width: appWidth, string: "", boxed: true, strColor: .white, boxColor: .lightblue))
     }
-    print(box.createBottom(width: appWidth, color: fg.lightblue))
+    print(box.createBottom(width: appWidth, color: .lightblue))
     
 }
 
