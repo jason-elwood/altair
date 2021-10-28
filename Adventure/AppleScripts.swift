@@ -8,17 +8,29 @@
 
 import Foundation
 
-class AppleScripts: NSObject {
+class AppleScripts: Decodable {
+    // THE APP NEEDS ACCESSIBILITY PERMISSIONS FOR THIS. SYSTEM PREFERENCES -> ACCESSIBILITY -> CHECK ALTAIR
+    func clearScreen() {
+        //let clearScreenCommand = "tell application \"Terminal\" to keystroke \"k\" using command down"
+        //let script = "clear && printf '\\e[3J'"
+        let clearScreenCommand = "tell application \"System Events\" to tell process \"Terminal\" to keystroke \"k\" using command down"
+        var tofsError2: NSDictionary?
+        if let scriptObject8 = NSAppleScript(source: clearScreenCommand) {
+            let output: NSAppleEventDescriptor = scriptObject8.executeAndReturnError(
+                &tofsError2)
+            if (tofsError2 != nil) {
+                //print("Write to terminal Error: \(String(describing: tofsError2))")
+            } else {
+                //print("Write to terminal Success: \(String(describing: output.stringValue!))")
+            }
+        }
+    }
     
     func initializeScripts(appHeight: Int, appWidth: Int) {
-        
-        /********************************************************************
-         Not an AppleScript but does help initialize the window so it's here.
-        *********************************************************************/
 
-        let terminalDimenshionsScript = "tell application \"Terminal\" to set bounds of window 1 to {0, 0, \(Int(Double(appWidth) * 7.2)), \(Int(Double(appHeight) * 13.5))}"     // {x, y, width, height}
+        let terminalDimensionsScript = "tell application \"Terminal\" to set bounds of window 1 to {0, 0, \(Int(Double(appWidth) * 7.2)), \(Int(Double(appHeight) * 13.5))}"     // {x, y, width, height}
         var tdsError: NSDictionary?
-        if let scriptObject6 = NSAppleScript(source: terminalDimenshionsScript) {
+        if let scriptObject6 = NSAppleScript(source: terminalDimensionsScript) {
             let output: NSAppleEventDescriptor = scriptObject6.executeAndReturnError(
                 &tdsError)
             if (tdsError != nil) {

@@ -11,10 +11,10 @@
 		2F1BE9BB1D483D88000C6C40 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9BA1D483D88000C6C40 /* Box.swift */; };
 		2F1BE9BF1D49105F000C6C40 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */; };
 		2F1BE9C11D4910AD000C6C40 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C01D4910AD000C6C40 /* GameState.swift */; };
-		2F1BE9C41D4927C8000C6C40 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C31D4927C8000C6C40 /* UI.swift */; };
+		2F1BE9C41D4927C8000C6C40 /* MainGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9C31D4927C8000C6C40 /* MainGameScreen.swift */; };
 		2F1BE9CB1D494E42000C6C40 /* Monsters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9CA1D494E42000C6C40 /* Monsters.swift */; };
 		2F1BE9CD1D494E4C000C6C40 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9CC1D494E4C000C6C40 /* Map.swift */; };
-		2F1BE9CF1D494E5F000C6C40 /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9CE1D494E5F000C6C40 /* Weapons.swift */; };
+		2F1BE9CF1D494E5F000C6C40 /* ShopItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9CE1D494E5F000C6C40 /* ShopItems.swift */; };
 		2F1BE9D11D49591C000C6C40 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1BE9D01D49591C000C6C40 /* Tutorial.swift */; };
 		2F35F46D1D480E56005C97EE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35F46C1D480E56005C97EE /* Colors.swift */; };
 		2F4E1AE41D5ACE76007EDB13 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E1AE31D5ACE76007EDB13 /* SplashScreen.swift */; };
@@ -23,6 +23,12 @@
 		2F709ECE1D46E9190075BB45 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F709ECD1D46E9190075BB45 /* main.swift */; };
 		2F8ED2231D55584500498B09 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2221D55584500498B09 /* Location.swift */; };
 		2F8ED2251D555AE700498B09 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8ED2241D555AE700498B09 /* NPC.swift */; };
+		2FD1C6352408A9EE0060EF48 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD1C6342408A9EE0060EF48 /* Networking.swift */; };
+		2FE2D79B240EF93300D8D1E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2D79A240EF93300D8D1E2 /* Constants.swift */; };
+		2FE2D79F240F116C00D8D1E2 /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2D79E240F116C00D8D1E2 /* Weapons.swift */; };
+		2FE2D7A1240F2ADB00D8D1E2 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2D7A0240F2ADB00D8D1E2 /* EndScreen.swift */; };
+		2FE2D7A3240F45C100D8D1E2 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2D7A2240F45C100D8D1E2 /* Battle.swift */; };
+		2FE2D7A52410F2B900D8D1E2 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2D7A42410F2B900D8D1E2 /* Talk.swift */; };
 		2FEB69492401C0080009E2CF /* FirebaseAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69472401C0080009E2CF /* FirebaseAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FEB69562401C0400009E2CF /* FirebaseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB694B2401C0400009E2CF /* FirebaseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FEB69582401C0400009E2CF /* FirebaseCoreDiagnostics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB694C2401C0400009E2CF /* FirebaseCoreDiagnostics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,9 +42,11 @@
 		2FEB69682401C0410009E2CF /* nanopb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEB69542401C0400009E2CF /* nanopb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FEB696D240253750009E2CF /* DataBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB696C240253750009E2CF /* DataBaseModel.swift */; };
 		2FEB696F240254720009E2CF /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB696E240254710009E2CF /* ApplicationData.swift */; };
+		2FEB697124060E310009E2CF /* Treasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB697024060E310009E2CF /* Treasure.swift */; };
+		2FED9E6C240B9703009800DA /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED9E6B240B9702009800DA /* Shop.swift */; };
+		2FED9E6E240B9D6F009800DA /* ShopScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED9E6D240B9D6F009800DA /* ShopScreen.swift */; };
 		2FF1AA8C1D4ABED10054707B /* LargeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1AA8B1D4ABED10054707B /* LargeText.swift */; };
 		2FF1AA911D4B2F4F0054707B /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1AA901D4B2F4F0054707B /* Help.swift */; };
-		7CB10FFCC51696459803A5C9 /* Pods_Altair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC50804599422A26817CEA9 /* Pods_Altair.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,15 +83,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F564516C389244BF0C11853 /* Pods-Altair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Altair.debug.xcconfig"; path = "Target Support Files/Pods-Altair/Pods-Altair.debug.xcconfig"; sourceTree = "<group>"; };
 		2F1BE9B81D483787000C6C40 /* AppleScripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScripts.swift; sourceTree = "<group>"; };
 		2F1BE9BA1D483D88000C6C40 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		2F1BE9C01D4910AD000C6C40 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		2F1BE9C31D4927C8000C6C40 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		2F1BE9C31D4927C8000C6C40 /* MainGameScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameScreen.swift; sourceTree = "<group>"; };
 		2F1BE9CA1D494E42000C6C40 /* Monsters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monsters.swift; sourceTree = "<group>"; };
 		2F1BE9CC1D494E4C000C6C40 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
-		2F1BE9CE1D494E5F000C6C40 /* Weapons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
+		2F1BE9CE1D494E5F000C6C40 /* ShopItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopItems.swift; sourceTree = "<group>"; };
 		2F1BE9D01D49591C000C6C40 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		2F35F46C1D480E56005C97EE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2F4E1AE31D5ACE76007EDB13 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -96,6 +103,12 @@
 		2FC10F882400BF0900CAB3B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2FC10F892400BFDD00CAB3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FC10F8B2400C88F00CAB3B1 /* icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icons.icns; sourceTree = "<group>"; };
+		2FD1C6342408A9EE0060EF48 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2FE2D79A240EF93300D8D1E2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2FE2D79E240F116C00D8D1E2 /* Weapons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
+		2FE2D7A0240F2ADB00D8D1E2 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
+		2FE2D7A2240F45C100D8D1E2 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
+		2FE2D7A42410F2B900D8D1E2 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		2FEB69472401C0080009E2CF /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FEB694B2401C0400009E2CF /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FEB694C2401C0400009E2CF /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,10 +122,11 @@
 		2FEB69542401C0400009E2CF /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FEB696C240253750009E2CF /* DataBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseModel.swift; sourceTree = "<group>"; };
 		2FEB696E240254710009E2CF /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		2FEB697024060E310009E2CF /* Treasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasure.swift; sourceTree = "<group>"; };
+		2FED9E6B240B9702009800DA /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		2FED9E6D240B9D6F009800DA /* ShopScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopScreen.swift; sourceTree = "<group>"; };
 		2FF1AA8B1D4ABED10054707B /* LargeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeText.swift; sourceTree = "<group>"; };
 		2FF1AA901D4B2F4F0054707B /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
-		558686641236A2ABD209AED4 /* Pods-Altair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Altair.release.xcconfig"; path = "Target Support Files/Pods-Altair/Pods-Altair.release.xcconfig"; sourceTree = "<group>"; };
-		ECC50804599422A26817CEA9 /* Pods_Altair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Altair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,42 +134,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CB10FFCC51696459803A5C9 /* Pods_Altair.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F1BE9C21D4927BE000C6C40 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				2F1BE9C31D4927C8000C6C40 /* UI.swift */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
-		2F1BE9C91D4930D5000C6C40 /* Classes */ = {
+		2F1BE9C21D4927BE000C6C40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2F4E1AE31D5ACE76007EDB13 /* SplashScreen.swift */,
+				2F1BE9C31D4927C8000C6C40 /* MainGameScreen.swift */,
+				2FED9E6D240B9D6F009800DA /* ShopScreen.swift */,
+				2FE2D7A0240F2ADB00D8D1E2 /* EndScreen.swift */,
+				2FF1AA901D4B2F4F0054707B /* Help.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2F1BE9C91D4930D5000C6C40 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F1BE9B81D483787000C6C40 /* AppleScripts.swift */,
+				2FE2D7A2240F45C100D8D1E2 /* Battle.swift */,
 				2F1BE9BA1D483D88000C6C40 /* Box.swift */,
 				2F35F46C1D480E56005C97EE /* Colors.swift */,
-				2F1BE9B81D483787000C6C40 /* AppleScripts.swift */,
-				2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */,
 				2F1BE9C01D4910AD000C6C40 /* GameState.swift */,
-				2F1BE9CA1D494E42000C6C40 /* Monsters.swift */,
-				2F1BE9CC1D494E4C000C6C40 /* Map.swift */,
-				2F1BE9CE1D494E5F000C6C40 /* Weapons.swift */,
-				2F1BE9D01D49591C000C6C40 /* Tutorial.swift */,
 				2FF1AA8B1D4ABED10054707B /* LargeText.swift */,
-				2FF1AA901D4B2F4F0054707B /* Help.swift */,
-				2F8ED2221D55584500498B09 /* Location.swift */,
-				2F8ED2241D555AE700498B09 /* NPC.swift */,
-				2F4E1AE51D5B049A007EDB13 /* Quests.swift */,
 				2F4E1AE71D5B0BC7007EDB13 /* Levels.swift */,
+				2F8ED2221D55584500498B09 /* Location.swift */,
+				2F1BE9CC1D494E4C000C6C40 /* Map.swift */,
+				2FD1C6342408A9EE0060EF48 /* Networking.swift */,
+				2F8ED2241D555AE700498B09 /* NPC.swift */,
+				2F1BE9CA1D494E42000C6C40 /* Monsters.swift */,
+				2F4E1AE51D5B049A007EDB13 /* Quests.swift */,
+				2F1BE9CE1D494E5F000C6C40 /* ShopItems.swift */,
+				2FED9E6B240B9702009800DA /* Shop.swift */,
+				2FE2D7A42410F2B900D8D1E2 /* Talk.swift */,
+				2FEB697024060E310009E2CF /* Treasure.swift */,
+				2F1BE9D01D49591C000C6C40 /* Tutorial.swift */,
+				2FE2D79E240F116C00D8D1E2 /* Weapons.swift */,
 			);
-			name = Classes;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		2F709EC11D46E9180075BB45 = {
@@ -180,11 +200,11 @@
 		2F709ECC1D46E9190075BB45 /* Altair */ = {
 			isa = PBXGroup;
 			children = (
-				2FEB696B240253440009E2CF /* Model */,
 				2FC10F882400BF0900CAB3B1 /* Images.xcassets */,
 				2F709ECD1D46E9190075BB45 /* main.swift */,
-				2F1BE9C21D4927BE000C6C40 /* UI */,
-				2F1BE9C91D4930D5000C6C40 /* Classes */,
+				2FEB696B240253440009E2CF /* Models */,
+				2F1BE9C21D4927BE000C6C40 /* Views */,
+				2F1BE9C91D4930D5000C6C40 /* Controllers */,
 				2FC10F892400BFDD00CAB3B1 /* Info.plist */,
 			);
 			name = Altair;
@@ -200,13 +220,15 @@
 			path = Adventure;
 			sourceTree = "<group>";
 		};
-		2FEB696B240253440009E2CF /* Model */ = {
+		2FEB696B240253440009E2CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2FEB696C240253750009E2CF /* DataBaseModel.swift */,
 				2FEB696E240254710009E2CF /* ApplicationData.swift */,
+				2FEB696C240253750009E2CF /* DataBaseModel.swift */,
+				2F1BE9BE1D49105F000C6C40 /* DataRequest.swift */,
+				2FE2D79A240EF93300D8D1E2 /* Constants.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		95AEF44DCC07E65A667D1DA7 /* Frameworks */ = {
@@ -223,7 +245,6 @@
 				2FEB69532401C0400009E2CF /* leveldb.framework */,
 				2FEB69542401C0400009E2CF /* nanopb.framework */,
 				2FEB69472401C0080009E2CF /* FirebaseAuth.framework */,
-				ECC50804599422A26817CEA9 /* Pods_Altair.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,8 +252,6 @@
 		E1FDC040648841C42E51C6E8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1F564516C389244BF0C11853 /* Pods-Altair.debug.xcconfig */,
-				558686641236A2ABD209AED4 /* Pods-Altair.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -244,7 +263,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F709ED11D46E9190075BB45 /* Build configuration list for PBXNativeTarget "Altair" */;
 			buildPhases = (
-				0512B274BFC7FA910BAB1CE0 /* [CP] Check Pods Manifest.lock */,
 				2F709EC61D46E9180075BB45 /* Sources */,
 				2F709EC71D46E9180075BB45 /* Frameworks */,
 				2F709EC81D46E9180075BB45 /* CopyFiles */,
@@ -293,31 +311,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0512B274BFC7FA910BAB1CE0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Altair-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		2F709EC61D46E9180075BB45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -325,24 +318,33 @@
 			files = (
 				2F1BE9BF1D49105F000C6C40 /* DataRequest.swift in Sources */,
 				2F709ECE1D46E9190075BB45 /* main.swift in Sources */,
+				2FED9E6C240B9703009800DA /* Shop.swift in Sources */,
 				2F1BE9BB1D483D88000C6C40 /* Box.swift in Sources */,
+				2FE2D7A1240F2ADB00D8D1E2 /* EndScreen.swift in Sources */,
 				2F1BE9CB1D494E42000C6C40 /* Monsters.swift in Sources */,
 				2F8ED2251D555AE700498B09 /* NPC.swift in Sources */,
+				2FE2D79B240EF93300D8D1E2 /* Constants.swift in Sources */,
 				2F1BE9D11D49591C000C6C40 /* Tutorial.swift in Sources */,
-				2F1BE9C41D4927C8000C6C40 /* UI.swift in Sources */,
+				2FD1C6352408A9EE0060EF48 /* Networking.swift in Sources */,
+				2F1BE9C41D4927C8000C6C40 /* MainGameScreen.swift in Sources */,
 				2F1BE9CD1D494E4C000C6C40 /* Map.swift in Sources */,
 				2F4E1AE81D5B0BC7007EDB13 /* Levels.swift in Sources */,
 				2FEB696D240253750009E2CF /* DataBaseModel.swift in Sources */,
 				2FEB696F240254720009E2CF /* ApplicationData.swift in Sources */,
+				2FE2D7A3240F45C100D8D1E2 /* Battle.swift in Sources */,
 				2F8ED2231D55584500498B09 /* Location.swift in Sources */,
 				2F4E1AE61D5B049A007EDB13 /* Quests.swift in Sources */,
+				2FED9E6E240B9D6F009800DA /* ShopScreen.swift in Sources */,
+				2FE2D79F240F116C00D8D1E2 /* Weapons.swift in Sources */,
+				2FE2D7A52410F2B900D8D1E2 /* Talk.swift in Sources */,
 				2F1BE9C11D4910AD000C6C40 /* GameState.swift in Sources */,
 				2FF1AA8C1D4ABED10054707B /* LargeText.swift in Sources */,
-				2F1BE9CF1D494E5F000C6C40 /* Weapons.swift in Sources */,
+				2F1BE9CF1D494E5F000C6C40 /* ShopItems.swift in Sources */,
 				2F4E1AE41D5ACE76007EDB13 /* SplashScreen.swift in Sources */,
 				2F1BE9B91D483787000C6C40 /* AppleScripts.swift in Sources */,
 				2FF1AA911D4B2F4F0054707B /* Help.swift in Sources */,
 				2F35F46D1D480E56005C97EE /* Colors.swift in Sources */,
+				2FEB697124060E310009E2CF /* Treasure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +458,6 @@
 		};
 		2F709ED21D46E9190075BB45 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F564516C389244BF0C11853 /* Pods-Altair.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -464,6 +465,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Adventure/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -473,7 +475,6 @@
 		};
 		2F709ED31D46E9190075BB45 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 558686641236A2ABD209AED4 /* Pods-Altair.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -481,6 +482,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Adventure/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;

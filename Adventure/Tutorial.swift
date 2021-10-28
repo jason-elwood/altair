@@ -27,5 +27,5 @@ func startTutorial(bodyRowsObj: Array<String>, appWidth: Int) {
     bodyRows.append("If you need any help along the way, just type <help>.")
     bodyRows.append("Good luck to you.")
 
-    print("\u{001B}[2J")
+    //print("\u{001B}[2J")
 }

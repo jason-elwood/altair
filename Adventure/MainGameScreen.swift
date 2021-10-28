@@ -10,17 +10,16 @@ import Foundation
 
 let textColor: ANSIColorsForeground = .cyan
 
-func showHeader(box: Box, appWidth: Int, title: String, playerName: String, playerLevel: Int, playerHitPoints: Int, playerExperience: Int, currentWeapon: String, potions: Int) {
-    
+func showHeader(box: Box, appWidth: Int, title: String, playerName: String, playerLevel: Int, playerHitPoints: Int, playerExperience: Int, toNextLevel: Int, currentWeapon: String, potions: Int, gold: Int) {
     print(box.createLidWithTitle(width: appWidth, title: title, strColor: .white, boxColor: .lightblue))
-    print(box.leftText(width: appWidth, cols: 2, string: playerName, string2: String(currentLocation!.getName()), boxed: true, strColor: textColor, boxColor: .lightblue))
-    print(box.leftText(width: appWidth, cols: 2, string: "Level: \(playerLevel)", string2: String(currentZone!.getName()), boxed: true, strColor: textColor, boxColor: .lightblue))
-    print(box.leftText(width: appWidth, cols: 1, string: "Exp: \(playerExperience)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 2, string: playerName, string2: String(currentZone?.getName() ?? ""), boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 2, string: "Level: \(playerLevel)", string2: String(currentLocation?.getName() ?? ""), boxed: true, strColor: textColor, boxColor: .lightblue))
+    print(box.leftText(width: appWidth, cols: 2, string: "Exp: \(playerExperience)/\(toNextLevel)", string2: "Gold: \(gold)", boxed: true, strColor: textColor, boxColor: .lightblue))
     print(box.leftText(width: appWidth, cols: 1, string: "HP: \(playerHitPoints)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
     print(box.leftText(width: appWidth, cols: 1, string: "Potions: \(potions)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
     print(box.leftText(width: appWidth, cols: 1, string: "Weapon: \(currentWeapon)", string2: "", boxed: true, strColor: textColor, boxColor: .lightblue))
-    print(box.centeredText(width: appWidth, string: "COMMANDS", boxed: true, strColor: .white, boxColor: .lightblue))
-    print(box.createLinksList(width: appWidth, links: ["configure", "help", "look", "shop", "talk","loot", "travel", "quit"], strColor: .white, bgColor: .cyan, boxColor: .lightblue))
+    print(box.centeredText(width: appWidth, string: "COMMON COMMANDS", boxed: true, strColor: .white, boxColor: .lightblue))
+    print(box.createLinksList(width: appWidth, links: ["help", "look", "enter", "exit", "talk", "travel", "quit", "quests"], strColor: .white, bgColor: .cyan, boxColor: .lightblue))
     //print(box.createLinksList(appWidth, links: ["attack", "potion", "rest", "run", "shop", "configure", "help", "quit"], strColor: fg.white, bgColor: bg.cyan, boxColor: fg.lightblue))
     //.clear - ""
     print(box.createBottom(width: appWidth, color: .lightblue))
@@ -49,6 +48,16 @@ func showFooter(box: Box, footerRow: Array<String>, appWidth: Int) {
     }
     print(box.createBottom(width: appWidth, color: .lightblue))
     
+}
+
+func showTitle(box: Box, appWidth: Int) -> [String] {
+    var rows:[String] = []
+
+    rows.append(box.centeredText(width: appWidth, string: "     __    __ __      __  ___ __         ___      __", boxed: true, strColor: .red, boxColor: .lightblue))
+    rows.append(box.centeredText(width: appWidth, string: "|  ||_ |  /  /  \\|\\/||_    | /  \\   /\\ |  |  /\\ ||__)", boxed: true, strColor: .red, boxColor: .lightblue))
+    rows.append(box.centeredText(width: appWidth, string: "|/\\||__|__\\__\\__/|  ||__   | \\__/  /--\\|__| /--\\|| \\", boxed: true, strColor: .red, boxColor: .lightblue))
+
+    return rows
 }
 
 

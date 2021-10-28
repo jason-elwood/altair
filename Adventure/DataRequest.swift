@@ -27,6 +27,14 @@ class DataRequest: NSObject {
         
     }
 
+    func logPlayerIn() {
+
+    }
+
+    func logPlayerOut() {
+
+    }
+
     func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
@@ -44,6 +52,34 @@ class DataRequest: NSObject {
             }
             task.resume()
         }
+    }
+
+    func saveSomeData() {
+        // prepare json data
+        let json: [String: Any] = ["fields": ["user": ["stringValue": "Dave"]]]
+
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+
+        // create post request
+        let url = URL(string: "https://firestore.googleapis.com/v1/projects/altair-89e7c/databases/(default)/documents/users.json/")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        // insert json data to the request
+        request.httpBody = jsonData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+
+        task.resume()
     }
 
     func getSomeData(mainClass: Any) {

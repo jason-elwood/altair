@@ -18,12 +18,21 @@ protocol LocationProtocol {
     func getZoneId() -> Int
     func getNPCs() -> [NpcProtocol]
     func getCanTalk(recipient: String) -> Bool
+    func setLocationType(locType: Int)
+    func getLocationType() -> Int
+    func getSubLocations() -> [LocationProtocol]
 }
 
 extension LocationProtocol {
     func getLocations() -> [LocationProtocol] {
         return []
     }
+}
+
+enum LocationTypes {
+    static let ZONE_TYPE            = 0
+    static let TAVERN_TYPE          = 1
+    static let STORE_TYPE           = 2
 }
 
 class Location: NSObject, LocationProtocol {
@@ -34,11 +43,23 @@ class Location: NSObject, LocationProtocol {
     var descr:      [String]?
     var canTalk:    Bool?
     var bodyRows:   Array<String> = []
+    var subLocations: [LocationProtocol] = []
+    var locationType: Int?
     
-    func initLoc(name: String, zoneId: Int, bodyRows: Array<String>) {
+    func initLoc(name: String, zoneId: Int, bodyRows: Array<String>, subLoc: [LocationProtocol], locType: Int) {
         self.name = name
         self.zoneId = zoneId
         self.bodyRows = bodyRows
+        self.subLocations = subLoc
+        self.locationType = locType
+    }
+
+    func setLocationType(locType: Int) {
+
+    }
+
+    func getLocationType() -> Int {
+        return locationType!
     }
     
     func setDescription(descr: [String]) {
@@ -70,10 +91,11 @@ class Location: NSObject, LocationProtocol {
     }
     
     func getCanTalk(recipient: String) -> Bool {
-        if canTalk! {
-            npcReply(bodyRowsObj: bodyRows, recipient: recipient)
-        }
         return canTalk!
+    }
+
+    func getSubLocations() -> [LocationProtocol] {
+        return subLocations
     }
 }
 
